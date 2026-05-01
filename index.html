@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<!-- ═══════════════════════════════════════════════════════
+     GOOGLE SEARCH CONSOLE VERIFICATION
+     Replace YOUR_SEARCH_CONSOLE_CODE with your actual code
+     from Search Console → Settings → Ownership verification → HTML tag
+     ═══════════════════════════════════════════════════════ -->
+<meta name="google-site-verification" content="YOUR_SEARCH_CONSOLE_CODE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PianoPath – Learn Piano Free Online | Interactive Piano, Chords & Music Theory</title>
+<meta name="description" content="Free interactive piano you can play in your browser. Learn chords, scales, music theory, ear training and beginner piano lessons. No download, no sign-up.">
+<meta name="keywords" content="learn piano online free, interactive piano, piano chords, music theory, ear training, piano lessons, scales, circle of fifths">
+<meta property="og:title" content="PianoPath – Free Interactive Piano & Music Theory">
+<meta property="og:description" content="Play piano online, explore chords & scales, complete theory charts, ear training games. Free forever.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://pianopath.vercel.app/" />
+
+<!-- ═══════════════════════════════════════════════════════
+     GOOGLE ADSENSE
+     Step 1: Replace YOUR_PUB_ID with ca-pub-XXXXXXXXXXXXXXXX
+     Step 2: Replace each YOUR_SLOT_ID_n with your 10-digit slot IDs
+     Step 3: Delete the .ad-placeholder line in CSS (marked below)
+     ═══════════════════════════════════════════════════════ -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_PUB_ID" crossorigin="anonymous"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ═══ THEME ═══ */
+:root{
+  --bg:#0c0c10;--s1:#141418;--s2:#1c1c24;--s3:#242430;
+  --border:#2a2a38;--border2:#363648;
+  --acc:#c8a96e;--acc2:#7eb8c4;--acc3:#c47eb8;
+  --green:#6dba6d;--red:#e05555;
+  --text:#e8e4dc;--text2:#9994a0;--text3:#5c5870;
+  --nC:#e05555;--nD:#e0855a;--nE:#d4b84a;--nF:#6dba6d;--nG:#5aa8d4;--nA:#9b6de0;--nB:#d46da0;
+  --nCs:#e87070;--nDs:#e89a70;--nFs:#88cc88;--nGs:#70bce8;--nAs:#b088e8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-weight:300;min-height:100vh;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--s1)}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Playfair Display',serif}
+
+/* ═══ AD SLOTS ═══ */
+.ad-slot{background:var(--s1);border:1px dashed var(--border);border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--text3);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;overflow:hidden;position:relative}
+.ad-slot ins{display:block;width:100%;height:100%}
+/* DELETE THIS NEXT LINE after AdSense is active — it hides broken tags during development */
+.ad-placeholder{display:flex;align-items:center;justify-content:center;width:100%;height:100%;pointer-events:none;font-size:.58rem;color:var(--text3);letter-spacing:.1em;text-transform:uppercase}
+.ad-leader{height:90px;width:100%;margin:.5rem 0}
+.ad-banner{height:60px;width:100%;margin:.6rem 0}
+.ad-rect{width:300px;min-height:250px;flex-shrink:0}
+
+/* ═══ HEADER ═══ */
+header{position:sticky;top:0;z-index:500;background:rgba(12,12,16,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 1.25rem;height:54px}
+.logo{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;color:var(--acc);letter-spacing:-.02em}
+.logo-sub{font-family:'IBM Plex Mono',monospace;font-size:.55rem;color:var(--text3);letter-spacing:.14em;margin-left:.4rem;text-transform:uppercase}
+.nav{display:flex;gap:.1rem}
+.nav a{font-family:'IBM Plex Mono',monospace;font-size:.6rem;text-transform:uppercase;letter-spacing:.09em;color:var(--text2);padding:.38rem .7rem;border-radius:2px;transition:all .15s;white-space:nowrap}
+.nav a:hover,.nav a.active{color:var(--acc);background:rgba(200,169,110,.08)}
+.nav-mob{display:none;background:none;border:1px solid var(--border);color:var(--text2);padding:.28rem .5rem;border-radius:3px;cursor:pointer;font-size:1.1rem}
+
+/* ═══ SECTIONS ═══ */
+.section{padding:2rem 1.25rem;border-bottom:1px solid var(--border);scroll-margin-top:54px}
+.wrap{max-width:1360px;margin:0 auto}
+.sec-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;text-transform:uppercase;letter-spacing:.14em;color:var(--acc);margin-bottom:.25rem}
+.sec-title{font-size:1.5rem;font-weight:700;color:var(--acc);margin-bottom:.25rem}
+.sec-sub{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.4rem}
+
+/* ═══ PIANO ═══ */
+.piano-shell{background:linear-gradient(180deg,#1a1a24 0%,#0e0e16 100%);border-radius:8px;padding:10px 10px 14px;box-shadow:0 20px 60px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.04);overflow-x:auto}
+#piano{position:relative;height:170px;min-width:760px;user-select:none}
+.wk{position:absolute;background:linear-gradient(180deg,#f0ece0,#e4dece);border:1px solid #b0a890;border-bottom:1px solid #906050;border-radius:0 0 7px 7px;height:100%;cursor:pointer;transition:background .04s,transform .04s,box-shadow .04s;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding-bottom:7px;box-shadow:1px 3px 8px rgba(0,0,0,.35),inset 0 -3px 5px rgba(0,0,0,.08)}
+.wk:active,.wk.active{background:linear-gradient(180deg,#d8cfa8,#c0b070)!important;transform:translateY(2px);box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.wk.hl-root{background:linear-gradient(180deg,#d4a060,#a87030)!important}
+.wk.hl-scale{background:linear-gradient(180deg,#6aacbc,#4a8c9c)!important}
+.wk.hl-chord{background:linear-gradient(180deg,#9060cc,#6840aa)!important}
+.bk{position:absolute;background:linear-gradient(180deg,#2e2e3e,#12121a);border:1px solid #08080e;border-radius:0 0 4px 4px;height:62%;top:0;cursor:pointer;z-index:10;transition:background .04s,transform .04s;box-shadow:2px 5px 10px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.06)}
+.bk:active,.bk.active{background:linear-gradient(180deg,#141420,#0a0a10)!important;transform:translateY(2px)}
+.bk.hl-root{background:linear-gradient(180deg,#a07030,#805010)!important}
+.bk.hl-scale{background:linear-gradient(180deg,#3a8090,#205a68)!important}
+.bk.hl-chord{background:linear-gradient(180deg,#6030a0,#401880)!important}
+.key-label{font-family:'IBM Plex Mono',monospace;font-size:.46rem;color:rgba(0,0,0,.25);pointer-events:none}
+.key-shortcut{position:absolute;top:8px;font-family:'IBM Plex Mono',monospace;font-size:.46rem;color:rgba(0,0,0,.2);pointer-events:none}
+.bk .key-shortcut{color:rgba(255,255,255,.18);top:5px}
+.key-deg{position:absolute;bottom:22px;font-family:'IBM Plex Mono',monospace;font-size:.5rem;font-weight:700;color:rgba(0,0,0,.55);pointer-events:none}
+
+/* ═══ CONTROLS ═══ */
+.controls{display:flex;gap:.9rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
+.ctrl{display:flex;flex-direction:column;gap:.28rem}
+.ctrl-lbl{font-family:'IBM Plex Mono',monospace;font-size:.56rem;color:var(--text3);text-transform:uppercase;letter-spacing:.1em}
+.btn{font-family:'IBM Plex Mono',monospace;font-size:.66rem;padding:.3rem .65rem;border:1px solid var(--border2);background:var(--s2);color:var(--text);cursor:pointer;border-radius:3px;transition:all .15s}
+.btn:hover{border-color:var(--acc);color:var(--acc)}
+.btn.on{background:var(--acc);color:#0c0c10;border-color:var(--acc)}
+.btn.on2{background:var(--acc2);color:#0c0c10;border-color:var(--acc2)}
+.btn.sm{padding:.2rem .48rem;font-size:.6rem}
+select{background:var(--s2);border:1px solid var(--border2);color:var(--text);padding:.3rem .5rem;border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:.68rem;cursor:pointer}
+select:focus{outline:none;border-color:var(--acc)}
+input[type=range]{-webkit-appearance:none;width:80px;height:3px;background:var(--border2);border-radius:2px;cursor:pointer;border:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;background:var(--acc);border-radius:50%}
+.btn-row{display:flex;gap:.3rem;flex-wrap:wrap}
+.note-out{margin-left:auto;text-align:right}
+.cur-note{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:var(--acc);line-height:1;min-height:2.2rem}
+.cur-freq{font-family:'IBM Plex Mono',monospace;font-size:.56rem;color:var(--text3);min-height:.8rem}
+.legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.6rem}
+.leg{display:flex;align-items:center;gap:.28rem;font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--text2)}
+.leg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+
+/* ═══ EXPLORER ═══ */
+.explorer-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+@media(max-width:820px){.explorer-grid{grid-template-columns:1fr}}
+.exp-card{background:var(--s1);border:1px solid var(--border);border-radius:6px;padding:1.25rem}
+.exp-card h3{font-size:1.05rem;color:var(--acc);margin-bottom:.85rem}
+.exp-selects{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-bottom:.7rem}
+.exp-result{background:var(--s2);border-radius:4px;padding:.7rem;min-height:76px}
+.big-name{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--acc);line-height:1;margin-bottom:.25rem}
+.fm{font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--text2)}
+.notes-row{display:flex;gap:.22rem;flex-wrap:wrap;margin-top:.4rem}
+.np{display:inline-flex;align-items:center;justify-content:center;width:1.65rem;height:1.65rem;border-radius:50%;font-size:.58rem;font-weight:500;color:#0c0c10;font-family:'IBM Plex Mono',monospace}
+.np.C{background:var(--nC)}.np.D{background:var(--nD)}.np.E{background:var(--nE)}.np.F{background:var(--nF)}.np.G{background:var(--nG)}.np.A{background:var(--nA)}.np.B{background:var(--nB)}
+.np.Cs{background:var(--nCs)}.np.Ds{background:var(--nDs)}.np.Fs{background:var(--nFs)}.np.Gs{background:var(--nGs)}.np.As{background:var(--nAs)}
+
+/* ═══ TABS ═══ */
+.tabs{display:flex;border-bottom:1px solid var(--border);background:var(--s1);overflow-x:auto}
+.tab{font-family:'IBM Plex Mono',monospace;font-size:.6rem;text-transform:uppercase;letter-spacing:.07em;padding:.65rem 1rem;color:var(--text2);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;background:none;border-top:none;border-left:none;border-right:none;flex-shrink:0;transition:all .15s}
+.tab:hover{color:var(--text)}
+.tab.active{color:var(--acc);border-bottom-color:var(--acc)}
+.tab-pane{display:none;padding:1.25rem 0}
+.tab-pane.active{display:block}
+
+/* ═══ LESSONS ═══ */
+.lessons-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:.85rem}
+.lcard{background:var(--s1);border:1px solid var(--border);border-radius:6px;padding:1.05rem;cursor:pointer;transition:all .2s;position:relative}
+.lcard:hover{border-color:var(--acc);transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.lcard.done{border-color:var(--green)}
+.lcard.done::after{content:'✓';position:absolute;top:.7rem;right:.75rem;color:var(--green);font-size:.8rem}
+.l-num{font-family:'IBM Plex Mono',monospace;font-size:.55rem;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.35rem}
+.l-title{font-family:'Playfair Display',serif;font-size:.95rem;color:var(--text);margin-bottom:.35rem}
+.l-desc{font-size:.73rem;color:var(--text2);line-height:1.5}
+.l-tags{display:flex;gap:.28rem;margin-top:.55rem;flex-wrap:wrap}
+.l-tag{font-family:'IBM Plex Mono',monospace;font-size:.53rem;padding:.1rem .35rem;background:var(--s2);border:1px solid var(--border);border-radius:2px;color:var(--text3)}
+.mb-beg{background:rgba(109,186,109,.12);color:#88cc88;border:1px solid rgba(109,186,109,.25);font-family:'IBM Plex Mono',monospace;font-size:.55rem;padding:.12rem .4rem;border-radius:2px;display:inline-block;margin-bottom:.4rem}
+.mb-int{background:rgba(126,184,196,.12);color:#7eb8c4;border:1px solid rgba(126,184,196,.25);font-family:'IBM Plex Mono',monospace;font-size:.55rem;padding:.12rem .4rem;border-radius:2px;display:inline-block;margin-bottom:.4rem}
+.mb-adv{background:rgba(196,126,184,.12);color:#c47eb8;border:1px solid rgba(196,126,184,.25);font-family:'IBM Plex Mono',monospace;font-size:.55rem;padding:.12rem .4rem;border-radius:2px;display:inline-block;margin-bottom:.4rem}
+
+/* ═══ THEORY TABLES ═══ */
+.scroll-x{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-family:'IBM Plex Mono',monospace;font-size:.72rem}
+th{background:var(--s2);color:var(--acc);padding:.48rem .7rem;text-align:left;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--border)}
+td{padding:.44rem .7rem;border-bottom:1px solid rgba(42,42,56,.5);vertical-align:middle}
+tr:hover td{background:rgba(200,169,110,.03)}
+.qtag{display:inline-block;padding:.1rem .36rem;border-radius:2px;font-size:.55rem;letter-spacing:.05em;text-transform:uppercase;font-weight:500}
+.q-maj{background:rgba(110,186,110,.15);color:#88cc88;border:1px solid rgba(110,186,110,.3)}
+.q-min{background:rgba(90,168,212,.15);color:#7eb8c4;border:1px solid rgba(90,168,212,.3)}
+.q-dim{background:rgba(212,90,90,.15);color:#e07070;border:1px solid rgba(212,90,90,.3)}
+.q-aug{background:rgba(200,169,110,.15);color:#c8a96e;border:1px solid rgba(200,169,110,.3)}
+.q-dom{background:rgba(196,126,184,.15);color:#c47eb8;border:1px solid rgba(196,126,184,.3)}
+.q-half{background:rgba(150,150,180,.15);color:#aaa8cc;border:1px solid rgba(150,150,180,.3)}
+.cn{color:var(--acc);font-weight:500}
+.sb{display:inline-block;background:var(--s2);border:1px solid var(--border);border-radius:2px;padding:.1rem .38rem;font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--acc)}
+
+/* ═══ INTERVAL GRID ═══ */
+.int-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:.5rem}
+.int-card{background:var(--s1);border:1px solid var(--border);border-radius:4px;padding:.75rem;cursor:pointer;transition:border-color .2s}
+.int-card:hover{border-color:var(--acc2)}
+.int-abbr{font-family:'IBM Plex Mono',monospace;font-size:.56rem;color:var(--text3);letter-spacing:.1em;text-transform:uppercase}
+.int-name{font-family:'Playfair Display',serif;font-size:.88rem;color:var(--acc2);margin:.1rem 0}
+.int-semi{font-family:'IBM Plex Mono',monospace;font-size:1.35rem;font-weight:300;color:var(--text)}
+.int-semi span{font-size:.58rem;color:var(--text3)}
+.int-ex{font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--text2);margin-top:.12rem}
+
+/* ═══ NUMBER GRID ═══ */
+.num-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:.35rem;margin-bottom:.85rem}
+@media(max-width:600px){.num-grid{grid-template-columns:repeat(4,1fr)}}
+.nc{background:var(--s1);border:1px solid var(--border);border-radius:4px;padding:.6rem .3rem;text-align:center;transition:all .15s}
+.nc:hover{border-color:var(--acc);transform:translateY(-2px)}
+.nc-rom{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--acc)}
+.nc-fn{font-family:'IBM Plex Mono',monospace;font-size:.5rem;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-top:.15rem}
+.nc-q{font-size:.54rem;margin-top:.18rem}
+
+/* ═══ SCALE VIZ ═══ */
+.scale-viz{display:flex;gap:.2rem;align-items:center;flex-wrap:wrap;margin:.7rem 0}
+.sv-step{display:flex;flex-direction:column;align-items:center;gap:.15rem}
+.sv-dot{width:1.65rem;height:1.65rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.56rem;font-weight:500;color:#0c0c10;font-family:'IBM Plex Mono',monospace}
+.sv-deg{font-family:'IBM Plex Mono',monospace;font-size:.54rem;color:var(--text3)}
+.sv-arr{font-size:.5rem;color:var(--text3)}
+
+/* ═══ EAR TRAINING ═══ */
+.ear-box{background:var(--s1);border:1px solid var(--border);border-radius:6px;padding:1.75rem;text-align:center;max-width:560px;margin:0 auto}
+.ear-mode-row{display:flex;gap:.38rem;justify-content:center;margin-bottom:1.4rem;flex-wrap:wrap}
+.ear-q{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--text);margin-bottom:1.15rem;min-height:2rem}
+.ear-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:.38rem;margin-bottom:1.15rem}
+.ear-opt{padding:.62rem;background:var(--s2);border:1px solid var(--border2);color:var(--text);border-radius:4px;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:.74rem;transition:all .15s}
+.ear-opt:hover{border-color:var(--acc2);color:var(--acc2)}
+.ear-opt.correct{background:rgba(109,186,109,.2);border-color:var(--green);color:var(--green)}
+.ear-opt.wrong{background:rgba(224,85,85,.2);border-color:var(--red);color:var(--red)}
+.ear-score{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--text2);margin-bottom:.85rem}
+.ear-streak{color:var(--acc)}
+
+/* ═══ STAFF ═══ */
+.staff-wrap{background:var(--s1);border:1px solid var(--border);border-radius:4px;padding:1.15rem;margin-bottom:.85rem;overflow-x:auto}
+.not-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:.5rem}
+.not-card{background:var(--s1);border:1px solid var(--border);border-radius:4px;padding:.8rem}
+.not-card h4{font-family:'Playfair Display',serif;color:var(--acc);margin-bottom:.3rem;font-size:.88rem}
+.not-card p{font-size:.7rem;color:var(--text2);line-height:1.55}
+.not-sym{font-size:1.3rem;color:var(--acc2);margin-bottom:.2rem}
+
+/* ═══ TIME SIG ═══ */
+.time-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:.65rem}
+.time-card{background:var(--s1);border:1px solid var(--border);border-radius:4px;padding:.95rem;display:flex;gap:.85rem;align-items:flex-start}
+.time-sig{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--acc);min-width:2rem;text-align:center;line-height:1}
+.time-info h4{color:var(--text);font-size:.78rem;margin-bottom:.18rem}
+.time-info p{color:var(--text2);font-size:.7rem;line-height:1.5}
+.nv-row{display:flex;align-items:center;gap:.85rem;padding:.42rem 0;border-bottom:1px solid var(--border)}
+.nv-sym{font-size:1.5rem;color:var(--acc2);width:1.9rem;text-align:center;line-height:1}
+.nv-bar{height:5px;background:linear-gradient(90deg,var(--acc2),rgba(126,184,196,.1));border-radius:3px}
+
+/* ═══ INFO CARDS ═══ */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:.65rem}
+.info-card{background:var(--s1);border:1px solid var(--border);border-radius:5px;padding:1rem}
+.info-card h4{font-family:'Playfair Display',serif;color:var(--acc);margin-bottom:.35rem;font-size:.95rem}
+.info-card p{font-size:.75rem;color:var(--text2);line-height:1.65}
+.info-hl{border-left:3px solid var(--acc);padding:.55rem .75rem;background:rgba(200,169,110,.05);border-radius:0 4px 4px 0;font-size:.75rem;color:var(--text2);line-height:1.6;margin:.45rem 0}
+
+/* ═══ RATES TABLE ═══ */
+.rates-table{width:100%;border-collapse:collapse;font-family:'IBM Plex Mono',monospace;font-size:.67rem}
+.rates-table th{background:var(--s2);color:rgba(255,255,255,.6);padding:.46rem .7rem;text-align:left;font-weight:400;font-size:.57rem;text-transform:uppercase;letter-spacing:.08em}
+.rates-table td{padding:.46rem .7rem;border-bottom:1px solid var(--border);vertical-align:middle}
+.rates-table tr:hover td{background:var(--s2)}
+.rtag{display:inline-block;padding:.1rem .38rem;border-radius:2px;font-size:.54rem;text-transform:uppercase;font-weight:500}
+.rt-hi{background:rgba(45,106,79,.12);color:#6dba6d}.rt-md{background:rgba(184,134,11,.12);color:#c8a96e}.rt-lo{background:rgba(155,34,38,.12);color:#e07070}
+
+/* ═══ MODAL ═══ */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);z-index:900;display:none;align-items:center;justify-content:center;padding:1rem}
+.modal-bg.open{display:flex}
+.modal{background:var(--s1);border:1px solid var(--border2);border-radius:8px;max-width:660px;width:100%;max-height:88vh;overflow-y:auto;padding:1.75rem;position:relative}
+.modal-x{position:absolute;top:.9rem;right:.9rem;background:none;border:1px solid var(--border);color:var(--text2);width:26px;height:26px;border-radius:50%;cursor:pointer;font-size:.72rem;display:flex;align-items:center;justify-content:center}
+.modal-x:hover{color:var(--acc);border-color:var(--acc)}
+.modal h2{color:var(--acc);margin-bottom:.35rem;font-size:1.35rem}
+.modal h3{color:var(--acc2);margin:1rem 0 .35rem;font-size:.95rem}
+.modal p{color:var(--text2);line-height:1.75;font-size:.8rem;margin-bottom:.55rem}
+.modal ul{color:var(--text2);font-size:.78rem;line-height:1.8;padding-left:1.1rem;margin-bottom:.55rem}
+.modal .info{background:var(--s2);border-left:3px solid var(--acc);padding:.65rem .85rem;border-radius:0 4px 4px 0;margin:.9rem 0}
+.modal .info p{margin:0;color:var(--text)}
+
+/* ═══ CIRCLE ═══ */
+.circle-svg{width:min(480px,100%);filter:drop-shadow(0 0 28px rgba(200,169,110,.07));display:block;margin:0 auto}
+
+/* ═══ ARTICLES ═══ */
+.articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1rem;margin-bottom:1.5rem}
+.article-card{background:var(--s1);border:1px solid var(--border);border-radius:6px;padding:1.25rem}
+.article-card h3{font-size:1rem;color:var(--acc);margin-bottom:.6rem;line-height:1.35}
+.article-card p{font-size:.78rem;color:var(--text2);line-height:1.75;margin-bottom:.55rem}
+.article-card p:last-child{margin-bottom:0}
+details{background:var(--s1);border:1px solid var(--border);border-radius:5px;padding:.9rem 1.1rem;margin-bottom:.5rem}
+details summary{font-size:.82rem;font-weight:500;color:var(--acc2);cursor:pointer;list-style:none}
+details p{font-size:.76rem;color:var(--text2);line-height:1.75;margin-top:.65rem}
+
+/* ═══ LAYOUT ═══ */
+.two-col{display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:start}
+.sidebar-ad-col{display:none;flex-direction:column;gap:.9rem}
+@media(min-width:1200px){.sidebar-ad-col{display:flex}}
+@media(max-width:700px){
+  .nav{display:none}.nav-mob{display:block}
+  .nav.open{display:flex;flex-direction:column;position:absolute;top:54px;left:0;right:0;background:var(--s1);border-bottom:1px solid var(--border);padding:.7rem;gap:.3rem;z-index:501}
+  .ear-opts{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ═══ FOOTER ═══ */
+footer{text-align:center;padding:1.75rem;border-top:1px solid var(--border);font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--text3);letter-spacing:.08em}
+footer a{color:var(--text2)}.footer-links{display:flex;gap:1.25rem;justify-content:center;margin-bottom:.6rem;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<!-- ████ HEADER ████ -->
+<header>
+  <div style="display:flex;align-items:baseline;gap:.4rem">
+    <span class="logo">PianoPath</span>
+    <span class="logo-sub">Free Interactive Piano</span>
+  </div>
+  <nav class="nav" id="mainNav">
+    <a href="#play" class="active">Play</a>
+    <a href="#explore">Chords & Scales</a>
+    <a href="#lessons">Lessons</a>
+    <a href="#theory">Theory</a>
+    <a href="#ear">Ear Training</a>
+    <a href="#guides">Guides</a>
+  </nav>
+  <button class="nav-mob" onclick="document.getElementById('mainNav').classList.toggle('open')">☰</button>
+</header>
+
+<!-- TOP AD -->
+<div style="max-width:1360px;margin:0 auto;padding:0 1.25rem">
+  <div class="ad-slot ad-leader">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_PUB_ID" data-ad-slot="YOUR_SLOT_ID_1" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <div class="ad-placeholder">Advertisement</div>
+  </div>
+</div>
+
+<!-- ████ PIANO ████ -->
+<section class="section" id="play">
+<div class="wrap">
+  <div class="sec-label">Interactive Piano</div>
+  <h2 class="sec-title">Play Piano</h2>
+  <div class="sec-sub">Click keys · Computer keyboard (A–; keys) · Touch · Real audio synthesis</div>
+
+  <div class="controls">
+    <div class="ctrl">
+      <div class="ctrl-lbl">Octave</div>
+      <div style="display:flex;align-items:center;gap:.35rem">
+        <button class="btn sm" onclick="shiftOct(-1)">◂ −1</button>
+        <span id="octDisp" style="font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--acc);min-width:1.2rem;text-align:center">3</span>
+        <button class="btn sm" onclick="shiftOct(1)">+1 ▸</button>
+      </div>
+    </div>
+    <div class="ctrl">
+      <div class="ctrl-lbl">Volume</div>
+      <input type="range" id="volSlider" min="0" max="1" step=".05" value=".7" oninput="synth.vol=+this.value">
+    </div>
+    <div class="ctrl">
+      <div class="ctrl-lbl">Sustain</div>
+      <button class="btn" id="sustBtn" onclick="toggleSustain()">Off</button>
+    </div>
+    <div class="ctrl">
+      <div class="ctrl-lbl">Labels</div>
+      <div class="btn-row">
+        <button class="btn sm on2" id="btnLbl" onclick="toggleLabels()">Note names</button>
+        <button class="btn sm" id="btnKb" onclick="toggleKb()">Keyboard</button>
+      </div>
+    </div>
+    <div class="ctrl">
+      <div class="ctrl-lbl">Quick highlight</div>
+      <div class="btn-row">
+        <select id="qRoot"><option>C</option><option>C#</option><option>D</option><option>D#</option><option>E</option><option>F</option><option>F#</option><option>G</option><option>G#</option><option>A</option><option>A#</option><option>B</option></select>
+        <select id="qScale" onchange="quickHL()">
+          <option value="">— None —</option>
+          <option value="major">Major</option><option value="minor">Minor</option>
+          <option value="pent_maj">Pentatonic Maj</option><option value="pent_min">Pentatonic Min</option>
+          <option value="blues">Blues</option><option value="dorian">Dorian</option>
+          <option value="mixo">Mixolydian</option><option value="whole">Whole Tone</option>
+          <option value="harm_min">Harmonic Minor</option><option value="chrom">Chromatic</option>
+        </select>
+      </div>
+    </div>
+    <div class="note-out">
+      <div class="cur-note" id="curNote">—</div>
+      <div class="cur-freq" id="curFreq"></div>
+    </div>
+  </div>
+
+  <div class="piano-shell"><div id="piano"></div></div>
+
+  <div class="legend">
+    <div class="leg"><div class="leg-dot" style="background:#d4a060"></div>Root</div>
+    <div class="leg"><div class="leg-dot" style="background:#6aacbc"></div>Scale note</div>
+    <div class="leg"><div class="leg-dot" style="background:#9060cc"></div>Chord tone</div>
+  </div>
+</div>
+</section>
+
+<!-- ████ CHORD & SCALE EXPLORER ████ -->
+<section class="section" id="explore">
+<div class="wrap">
+  <div class="sec-label">Explorer</div>
+  <h2 class="sec-title">Chords & Scales</h2>
+  <div class="sec-sub">Select to highlight on keyboard and hear the sound</div>
+  <div class="two-col">
+    <div class="explorer-grid">
+      <!-- CHORD -->
+      <div class="exp-card">
+        <h3>🎵 Chord Explorer</h3>
+        <div class="exp-selects">
+          <div class="ctrl"><div class="ctrl-lbl">Root</div>
+            <select id="cRoot" onchange="updateChord()"><option>C</option><option>C#</option><option>D</option><option>D#</option><option>E</option><option>F</option><option>F#</option><option>G</option><option>G#</option><option>A</option><option>A#</option><option>B</option></select>
+          </div>
+          <div class="ctrl"><div class="ctrl-lbl">Quality</div>
+            <select id="cQual" onchange="updateChord()">
+              <option value="maj">Major</option><option value="min">Minor</option>
+              <option value="7">Dominant 7th</option><option value="maj7">Major 7th</option>
+              <option value="m7">Minor 7th</option><option value="dim">Diminished</option>
+              <option value="aug">Augmented</option><option value="dim7">Dim 7th</option>
+              <option value="sus2">Sus 2</option><option value="sus4">Sus 4</option>
+              <option value="add9">Add 9</option><option value="6">Major 6th</option>
+            </select>
+          </div>
+          <div class="ctrl"><div class="ctrl-lbl">Inversion</div>
+            <select id="cInv" onchange="updateChord()"><option value="0">Root</option><option value="1">1st</option><option value="2">2nd</option><option value="3">3rd</option></select>
+          </div>
+          <div class="ctrl"><div class="ctrl-lbl">Octave</div>
+            <select id="cOct" onchange="updateChord()"><option value="3">3</option><option value="4" selected>4</option><option value="5">5</option></select>
+          </div>
+        </div>
+        <div class="exp-result">
+          <div class="big-name" id="chordName">C Major</div>
+          <div class="fm" id="chordFormula">1 – 3 – 5</div>
+          <div class="notes-row" id="chordNotes"></div>
+        </div>
+        <div class="btn-row" style="margin-top:.7rem">
+          <button class="btn" onclick="playChord()">▶ Play</button>
+          <button class="btn" onclick="playArp()">↑ Arpeggio</button>
+          <button class="btn sm" onclick="clearHL()">✕ Clear</button>
+        </div>
+      </div>
+      <!-- SCALE -->
+      <div class="exp-card">
+        <h3>🎼 Scale Explorer</h3>
+        <div class="exp-selects">
+          <div class="ctrl"><div class="ctrl-lbl">Root</div>
+            <select id="sRoot" onchange="updateScale()"><option>C</option><option>C#</option><option>D</option><option>D#</option><option>E</option><option>F</option><option>F#</option><option>G</option><option>G#</option><option>A</option><option>A#</option><option>B</option></select>
+          </div>
+          <div class="ctrl"><div class="ctrl-lbl">Scale</div>
+            <select id="sType" onchange="updateScale()">
+              <option value="major">Major (Ionian)</option><option value="minor">Natural Minor</option>
+              <option value="harm_min">Harmonic Minor</option><option value="mel_min">Melodic Minor</option>
+              <option value="pent_maj">Major Pentatonic</option><option value="pent_min">Minor Pentatonic</option>
+              <option value="blues">Blues</option><option value="dorian">Dorian</option>
+              <option value="phrygian">Phrygian</option><option value="lydian">Lydian</option>
+              <option value="mixo">Mixolydian</option><option value="locrian">Locrian</option>
+              <option value="whole">Whole Tone</option><option value="dim">Diminished</option>
+              <option value="chrom">Chromatic</option>
+            </select>
+          </div>
+          <div class="ctrl"><div class="ctrl-lbl">Octave</div>
+            <select id="sOct" onchange="updateScale()"><option value="3">3</option><option value="4" selected>4</option><option value="5">5</option></select>
+          </div>
+          <div class="ctrl"><div class="ctrl-lbl">Speed</div>
+            <select id="sSpeed"><option value="300">Slow</option><option value="180" selected>Medium</option><option value="100">Fast</option></select>
+          </div>
+        </div>
+        <div class="exp-result">
+          <div class="big-name" id="scaleName">C Major</div>
+          <div class="fm" id="scaleFormula">W–W–H–W–W–W–H</div>
+          <div class="notes-row" id="scaleNotes"></div>
+        </div>
+        <div class="btn-row" style="margin-top:.7rem">
+          <button class="btn" onclick="playScaleAsc()">↑ Ascending</button>
+          <button class="btn" onclick="playScaleDesc()">↓ Descending</button>
+          <button class="btn sm" onclick="clearHL()">✕ Clear</button>
+        </div>
+      </div>
+    </div>
+    <!-- SIDEBAR AD -->
+    <div class="sidebar-ad-col">
+      <div class="ad-slot ad-rect">
+        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="YOUR_PUB_ID" data-ad-slot="YOUR_SLOT_ID_2"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        <div class="ad-placeholder">Advertisement · 300×250</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- MID AD -->
+<div style="max-width:1360px;margin:0 auto;padding:0 1.25rem">
+  <div class="ad-slot ad-banner">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_PUB_ID" data-ad-slot="YOUR_SLOT_ID_3" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <div class="ad-placeholder">Advertisement</div>
+  </div>
+</div>
+
+<!-- ████ LESSONS ████ -->
+<section class="section" id="lessons">
+<div class="wrap">
+  <div class="sec-label">Piano Lessons</div>
+  <h2 class="sec-title">Learn Piano</h2>
+  <div class="sec-sub">Beginner to advanced · Click any lesson to open</div>
+  <div class="tabs" id="lessonTabs">
+    <button class="tab active" onclick="switchTab('lessonTabs','lt-beg',this)">Beginner</button>
+    <button class="tab" onclick="switchTab('lessonTabs','lt-int',this)">Intermediate</button>
+    <button class="tab" onclick="switchTab('lessonTabs','lt-adv',this)">Concepts</button>
+  </div>
+  <div class="tab-pane active" id="lt-beg"><div class="lessons-grid" id="grid-beg"></div></div>
+  <div class="tab-pane" id="lt-int"><div class="lessons-grid" id="grid-int"></div></div>
+  <div class="tab-pane" id="lt-adv"><div class="lessons-grid" id="grid-adv"></div></div>
+</div>
+</section>
+
+<!-- ████ THEORY CHARTS ████ -->
+<section class="section" id="theory" style="background:var(--s1)">
+<div class="wrap">
+  <div class="sec-label">Music Theory</div>
+  <h2 class="sec-title">Theory Charts</h2>
+  <div class="sec-sub">10 complete reference charts</div>
+  <div class="tabs" id="theoryTabs">
+    <button class="tab active" onclick="switchTab('theoryTabs','th-7th',this)">7th Chords</button>
+    <button class="tab" onclick="switchTab('theoryTabs','th-tri',this)">Triads</button>
+    <button class="tab" onclick="switchTab('theoryTabs','th-num',this)">Number System</button>
+    <button class="tab" onclick="switchTab('theoryTabs','th-cof',this)">Circle of 5ths</button>
+    <button class="tab" onclick="switchTab('theoryTabs','th-int',this)">Intervals</button>
+    <button class="tab" onclick="switchTab('theoryTabs','th-key',this)">Key Signatures</button>
+    <button class="tab" onclick="switchTab('theoryTabs','th-pent',this)">Pentatonic</button>
+    <button class="tab" onclick="switchTab('theoryTabs','th-blu',this)">Blues Scale</button>
+    <button class="tab" onclick="switchTab('theoryTabs','th-sheet',this)">Sheet Music</button>
+    <button class="tab" onclick="switchTab('theoryTabs','th-time',this)">Time & Notes</button>
+  </div>
+  <div id="theoryCharts"></div>
+</div>
+</section>
+
+<!-- MID AD 2 -->
+<div style="max-width:1360px;margin:0 auto;padding:0 1.25rem">
+  <div class="ad-slot ad-banner">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_PUB_ID" data-ad-slot="YOUR_SLOT_ID_4" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <div class="ad-placeholder">Advertisement</div>
+  </div>
+</div>
+
+<!-- ████ EAR TRAINING ████ -->
+<section class="section" id="ear">
+<div class="wrap">
+  <div class="sec-label">Ear Training</div>
+  <h2 class="sec-title">Train Your Ear</h2>
+  <div class="sec-sub">Identify notes, intervals, and chords by sound</div>
+  <div class="ear-box">
+    <div class="ear-mode-row">
+      <button class="btn on" id="em-note" onclick="setEarMode('note')">Note ID</button>
+      <button class="btn" id="em-interval" onclick="setEarMode('interval')">Intervals</button>
+      <button class="btn" id="em-chord" onclick="setEarMode('chord')">Chords</button>
+    </div>
+    <div class="ear-score">Score: <b id="earScore">0</b> / <span id="earTotal">0</span> &nbsp;<span class="ear-streak" id="earStreak"></span></div>
+    <div class="ear-q" id="earQ">Press Play to begin!</div>
+    <div class="ear-opts" id="earOpts"></div>
+    <div style="display:flex;gap:.45rem;justify-content:center">
+      <button class="btn on" onclick="newEarQ()">▶ Play</button>
+      <button class="btn" onclick="replayEar()">↺ Replay</button>
+      <button class="btn sm" onclick="resetEar()">Reset</button>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ████ GUIDES — Static content for AdSense & SEO ████ -->
+<section class="section" id="guides" style="background:var(--s1)">
+<div class="wrap">
+  <div class="sec-label">Learning Center</div>
+  <h2 class="sec-title">Piano & Music Theory Guides</h2>
+  <div class="sec-sub">Practical explanations for every skill level</div>
+
+  <div class="articles-grid">
+    <article class="article-card">
+      <h3>How to read piano sheet music as a complete beginner</h3>
+      <p>Sheet music looks intimidating at first, but it follows simple, logical rules. The staff is five horizontal lines. Notes sitting higher on the staff are higher in pitch; notes lower on the staff are lower in pitch. Each note's shape tells you how long to hold it — an open oval is four beats, a filled oval with a stem is one beat.</p>
+      <p>The treble clef (the curly symbol on the left) marks the right-hand staff. Its lines from bottom to top spell out E G B D F — remembered as "Every Good Boy Does Fine." The spaces spell FACE. The bass clef marks the left-hand staff. Its lines are G B D F A — "Good Boys Do Fine Always" — and its spaces are A C E G.</p>
+      <p>Middle C, the central anchor note, sits just below the treble staff on a short extra line called a ledger line. Once you find middle C, the rest of the notes cascade alphabetically upward and downward from it. Practice finding five notes per session until reading feels automatic.</p>
+    </article>
+
+    <article class="article-card">
+      <h3>Understanding music theory: why it makes playing easier</h3>
+      <p>Music theory is often described as the grammar of music. Just as knowing grammar lets you build sentences confidently, knowing theory lets you understand why certain notes sound good together — and predict what comes next in any song.</p>
+      <p>The most important concept for beginners is the major scale: seven notes that form the backbone of Western music. Every major key follows the same pattern of whole and half steps: W–W–H–W–W–W–H. Once you know this pattern, you can build a major scale starting on any note without memorizing every key separately.</p>
+      <p>Chords are built directly from scales. A major chord takes the 1st, 3rd, and 5th notes of the major scale. A minor chord lowers the 3rd by a half step. Understanding this connection means you never have to memorize chord shapes in isolation — you can derive them from principles you already know.</p>
+    </article>
+
+    <article class="article-card">
+      <h3>The 10 most important piano chords for beginners</h3>
+      <p>With just ten chords, you can play thousands of popular songs. Start with C major (C–E–G), G major (G–B–D), and F major (F–A–C). These three chords together appear in more pop and folk songs than any other combination. Practice switching between them until each transition takes less than one second.</p>
+      <p>Add the relative minors next: A minor (A–C–E), E minor (E–G–B), and D minor (D–F–A). Minor chords carry a darker, more emotional character than their major counterparts. A minor is particularly important — it is the relative minor of C major and shares all the same notes.</p>
+      <p>Once comfortable with those six, add D major (D–F♯–A), B minor (B–D–F♯), E major (E–G♯–B), and A major (A–C♯–E). With these ten chords fluent under your fingers, you can cover most songs in any genre from pop to classical arrangements.</p>
+    </article>
+
+    <article class="article-card">
+      <h3>How to practice piano effectively: the deliberate practice method</h3>
+      <p>Most beginners make the mistake of playing through a piece from beginning to end, stopping when they hit mistakes, then starting over. This feels like practice but it primarily reinforces what you already know and avoids what you don't. Deliberate practice works differently.</p>
+      <p>Identify the specific two or three bars that give you trouble. Isolate them. Play them slowly — much slower than feels necessary — until your fingers find the right notes without hesitation. Then gradually increase the tempo. This targeted approach improves weak spots directly instead of skating over them repeatedly.</p>
+      <p>Hands-separate practice is underused by beginners. Playing the right hand alone, then the left hand alone, then combining them is far more efficient than always playing hands together when learning a new piece. Your brain needs to map each hand's movement independently before it can coordinate them smoothly.</p>
+    </article>
+
+    <article class="article-card">
+      <h3>Scales explained: major, minor, pentatonic, and blues</h3>
+      <p>A scale is simply a set of notes arranged in ascending or descending order that forms the raw material for melodies and chords. The major scale sounds bright and resolved. The natural minor scale sounds darker and more melancholic. Both use seven notes per octave and are the foundation of most Western music.</p>
+      <p>The pentatonic scale removes two notes from the major or minor scale — specifically the notes that create tension. The result is a five-note scale where every note sounds comfortable over a wide range of chords. This is why guitar soloists and jazz pianists rely on pentatonic scales for improvisation: you can play any note and it will sound intentional.</p>
+      <p>The blues scale adds one note — the flattened fifth, called the "blue note" — to the minor pentatonic. This one addition creates all the expressive tension that defines blues, jazz, rock, and soul. Try it: play the A minor pentatonic (A–C–D–E–G) then add E♭ between D and E. You will immediately recognize the sound.</p>
+    </article>
+
+    <article class="article-card">
+      <h3>What is the Circle of Fifths and how do musicians use it?</h3>
+      <p>The Circle of Fifths is a diagram that arranges all 12 musical keys in a circle. Moving clockwise, each key is a perfect fifth higher than the previous one. C is at the top. G is one step clockwise (one sharp). D is two steps clockwise (two sharps). F is one step counter-clockwise (one flat). B♭ is two steps counter-clockwise (two flats).</p>
+      <p>The circle is useful for three practical purposes. First, it tells you instantly how many sharps or flats any key has — count the clockwise steps from C. Second, it reveals which keys are harmonically close. Keys adjacent on the circle share six of their seven notes, which is why chord progressions that move by fifths sound so natural. Third, it identifies every key's relative minor — just look at the inner ring of the circle.</p>
+      <p>Songwriters use the circle to find chord progressions that feel inevitable. Moving from the V chord back to the I chord (dominant to tonic) is the most powerful resolution in Western music, and it maps directly to one step counter-clockwise on the circle.</p>
+    </article>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--acc);margin-bottom:.85rem">Frequently Asked Questions</h3>
+  <details><summary>How long does it take to learn piano?</summary><p>With consistent daily practice of 20–30 minutes, most beginners can play simple songs within 2–4 weeks, play comfortably with both hands within 3–6 months, and reach an intermediate level within 1–2 years. The biggest factor is not talent but consistency. Short daily sessions are far more effective than long weekly sessions because motor memory consolidates during sleep.</p></details>
+  <details><summary>Do I need a real piano or can I learn on a keyboard?</summary><p>A digital keyboard with at least 61 weighted or semi-weighted keys is sufficient for beginners and intermediate players. Weighted keys simulate the resistance of an acoustic piano and develop finger strength properly. Avoid small unweighted keyboards for serious practice — the muscle memory built on unweighted keys does not transfer well to a real piano. A 61 or 88-key digital keyboard from Roland, Yamaha, or Casio in the $150–$400 range is an excellent starting point.</p></details>
+  <details><summary>What is the difference between major and minor chords?</summary><p>A major chord contains the 1st, 3rd, and 5th notes of the major scale and has a bright, resolved, happy character. A minor chord lowers the 3rd by one half step (one semitone), creating a darker, more melancholic sound. For example, C major is C–E–G. C minor is C–E♭–G. The single half-step difference between E and E♭ creates the entire emotional contrast between major and minor. Use the Chord Explorer above to hear this difference directly.</p></details>
+  <details><summary>What are the keyboard shortcuts for the online piano?</summary><p>The computer keyboard maps to piano keys as follows: A=C, W=C#, S=D, E=D#, D=E, F=F, T=F#, G=G, Y=G#, H=A, U=A#, J=B, K=C (next octave). Press Z to shift the keyboard one octave down and X to shift one octave up. This covers one and a half octaves from any starting position.</p></details>
+  <details><summary>How does ear training improve piano playing?</summary><p>Ear training develops the ability to recognize intervals, chords, and scales by sound alone. This skill transforms how you engage with music in three ways: you can figure out songs by ear without sheet music, you can anticipate what chord comes next in a progression, and you hear your own playing more accurately which accelerates self-correction. Even 5 minutes of ear training daily produces measurable improvement within a few weeks. Use the Ear Training section above to practice note identification, interval recognition, and chord identification.</p></details>
+  <details><summary>What is the best way to learn music theory for piano?</summary><p>Learn theory in direct connection with the piano — never in isolation. Study a concept (for example, the major scale formula), immediately find it on the keyboard, play it in multiple keys, then listen to how it sounds. Abstract theory that is not immediately connected to sound rarely sticks. Start with major scales, then minor scales, then basic chords (triads), then chord progressions, then seventh chords. Each layer builds on the previous one. The Theory Charts section above covers all of these topics with interactive keyboard highlighting.</p></details>
+</div>
+</section>
+
+<!-- BOTTOM AD -->
+<div style="max-width:1360px;margin:0 auto;padding:0 1.25rem">
+  <div class="ad-slot ad-banner">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_PUB_ID" data-ad-slot="YOUR_SLOT_ID_5" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <div class="ad-placeholder">Advertisement</div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="#play">Play Piano</a><a href="#explore">Chords & Scales</a>
+    <a href="#lessons">Lessons</a><a href="#theory">Theory Charts</a>
+    <a href="#ear">Ear Training</a><a href="#guides">Guides & FAQ</a>
+  </div>
+  <div>PianoPath · Free Interactive Piano Learning · No Download · No Sign-up</div>
+  <div style="margin-top:.35rem;font-size:.52rem;color:var(--text3)">© 2025 PianoPath · Built with Web Audio API</div>
+</footer>
+
+<!-- LESSON MODAL -->
+<div class="modal-bg" id="lessonModal">
+  <div class="modal">
+    <button class="modal-x" onclick="document.getElementById('lessonModal').classList.remove('open')">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+// ════════════════════════════════════════
+// DATA
+// ════════════════════════════════════════
+const NOTES=['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+const ENH={'C#':'D♭','D#':'E♭','F#':'G♭','G#':'A♭','A#':'B♭'};
+const SCALES={
+  major:[0,2,4,5,7,9,11],minor:[0,2,3,5,7,8,10],harm_min:[0,2,3,5,7,8,11],mel_min:[0,2,3,5,7,9,11],
+  pent_maj:[0,2,4,7,9],pent_min:[0,3,5,7,10],blues:[0,3,5,6,7,10],dorian:[0,2,3,5,7,9,10],
+  phrygian:[0,1,3,5,7,8,10],lydian:[0,2,4,6,7,9,11],mixo:[0,2,4,5,7,9,10],locrian:[0,1,3,5,6,8,10],
+  whole:[0,2,4,6,8,10],dim:[0,1,3,4,6,7,9,10],chrom:[0,1,2,3,4,5,6,7,8,9,10,11]
+};
+const SCALE_NAMES={major:'Major (Ionian)',minor:'Natural Minor',harm_min:'Harmonic Minor',mel_min:'Melodic Minor',pent_maj:'Major Pentatonic',pent_min:'Minor Pentatonic',blues:'Blues',dorian:'Dorian',phrygian:'Phrygian',lydian:'Lydian',mixo:'Mixolydian',locrian:'Locrian',whole:'Whole Tone',dim:'Diminished',chrom:'Chromatic'};
+const SCALE_FRM={major:'W–W–H–W–W–W–H',minor:'W–H–W–W–H–W–W',harm_min:'W–H–W–W–H–W+H–H',mel_min:'W–H–W–W–W–W–H',pent_maj:'W–W–m3–W–m3',pent_min:'m3–W–W–m3–W',blues:'m3–W–H–H–m3–W',dorian:'W–H–W–W–W–H–W',phrygian:'H–W–W–W–H–W–W',lydian:'W–W–W–H–W–W–H',mixo:'W–W–H–W–W–H–W',locrian:'H–W–W–H–W–W–W',whole:'W–W–W–W–W–W',dim:'H–W–H–W–H–W–H–W',chrom:'H×12'};
+const CHORDS={
+  maj:{name:'Major',formula:'1–3–5',i:[0,4,7]},min:{name:'Minor',formula:'1–♭3–5',i:[0,3,7]},
+  7:{name:'Dominant 7th',formula:'1–3–5–♭7',i:[0,4,7,10]},maj7:{name:'Major 7th',formula:'1–3–5–7',i:[0,4,7,11]},
+  m7:{name:'Minor 7th',formula:'1–♭3–5–♭7',i:[0,3,7,10]},dim:{name:'Diminished',formula:'1–♭3–♭5',i:[0,3,6]},
+  aug:{name:'Augmented',formula:'1–3–♯5',i:[0,4,8]},dim7:{name:'Diminished 7th',formula:'1–♭3–♭5–♭♭7',i:[0,3,6,9]},
+  sus2:{name:'Sus 2',formula:'1–2–5',i:[0,2,7]},sus4:{name:'Sus 4',formula:'1–4–5',i:[0,5,7]},
+  add9:{name:'Add 9',formula:'1–3–5–9',i:[0,4,7,14]},6:{name:'Major 6th',formula:'1–3–5–6',i:[0,4,7,9]}
+};
+
+// ════════════════════════════════════════
+// SYNTH
+// ════════════════════════════════════════
+const synth={ctx:null,vol:.7,sustain:false,active:new Map(),
+  ctx_(){if(!this.ctx)this.ctx=new(window.AudioContext||window.webkitAudioContext)();if(this.ctx.state==='suspended')this.ctx.resume();return this.ctx;},
+  on(freq,vel=1){
+    const ctx=this.ctx_(),now=ctx.currentTime,k=Math.round(freq*100);
+    if(this.active.has(k)){try{this.active.get(k).g.gain.setValueAtTime(.001,now);}catch(e){}}
+    const master=ctx.createGain(),filt=ctx.createBiquadFilter();
+    filt.type='lowpass';filt.frequency.value=Math.min(1800+freq*2.5,7000);filt.Q.value=.4;
+    filt.connect(master);master.connect(ctx.destination);
+    const v=vel*this.vol*.22;
+    master.gain.setValueAtTime(0,now);master.gain.linearRampToValueAtTime(v,now+.003);
+    master.gain.exponentialRampToValueAtTime(v*.55,now+.07);master.gain.exponentialRampToValueAtTime(v*.28,now+.4);
+    master.gain.exponentialRampToValueAtTime(.001,now+(this.sustain?4.5:2.2));
+    [[1,'triangle',.75],[2,'sawtooth',.14],[3,'sawtooth',.06],[4,'sine',.025]].forEach(([m,t,g])=>{
+      const o=ctx.createOscillator(),og=ctx.createGain();
+      o.type=t;o.frequency.value=freq*m;if(m>1)o.detune.value=(Math.random()-.5)*4;
+      og.gain.setValueAtTime(g,now);og.gain.exponentialRampToValueAtTime(g*.05,now+.25+1/m);
+      o.connect(og);og.connect(filt);o.start(now);o.stop(now+6);
+    });
+    this.active.set(k,{g:master});return k;
+  },
+  off(freq){
+    if(this.sustain)return;
+    const ctx=this.ctx_(),now=ctx.currentTime,k=Math.round(freq*100),n=this.active.get(k);
+    if(!n)return;
+    try{n.g.gain.cancelScheduledValues(now);const c=Math.max(n.g.gain.value||.001,.001);n.g.gain.setValueAtTime(c,now);n.g.gain.exponentialRampToValueAtTime(.001,now+.28);}catch(e){}
+    this.active.delete(k);
+  },
+  allOff(){const ctx=this.ctx_(),now=ctx.currentTime;this.active.forEach(n=>{try{n.g.gain.cancelScheduledValues(now);n.g.gain.setValueAtTime(.001,now);n.g.gain.exponentialRampToValueAtTime(.0001,now+.25);}catch(e){}});this.active.clear();}
+};
+
+// ════════════════════════════════════════
+// PIANO
+// ════════════════════════════════════════
+let baseOct=3,showLabels=true,showKb=false;
+const NUM_OCTS=3,WHITE=['C','D','E','F','G','A','B'],BLACK_MAP={C:'C#',D:'D#',F:'F#',G:'G#',A:'A#'};
+const KB={a:{n:'C',o:0},w:{n:'C#',o:0},s:{n:'D',o:0},e:{n:'D#',o:0},d:{n:'E',o:0},f:{n:'F',o:0},t:{n:'F#',o:0},g:{n:'G',o:0},y:{n:'G#',o:0},h:{n:'A',o:0},u:{n:'A#',o:0},j:{n:'B',o:0},k:{n:'C',o:1},i:{n:'C#',o:1},l:{n:'D',o:1},o:{n:'D#',o:1},';':{n:'E',o:1}};
+const midiFreq=m=>440*Math.pow(2,(m-69)/12);
+const noteToMidi=(n,oct)=>12+NOTES.indexOf(n)+oct*12;
+
+function buildPiano(){
+  const piano=document.getElementById('piano');piano.innerHTML='';
+  const totalW=NUM_OCTS*7,W=100/totalW;
+  for(let oct=0;oct<NUM_OCTS;oct++){
+    WHITE.forEach((note,i)=>{
+      const ai=oct*7+i,ro=baseOct+oct,midi=noteToMidi(note,ro),freq=midiFreq(midi);
+      const div=document.createElement('div');div.className='wk';
+      div.dataset.freq=freq.toFixed(2);div.dataset.note=note;div.dataset.oct=ro;div.dataset.midi=midi;
+      div.style.left=(ai*W)+'%';div.style.width=W+'%';
+      if(showLabels){const l=document.createElement('span');l.className='key-label';l.textContent=note+ro;div.appendChild(l);}
+      const kb=Object.entries(KB).find(([k,v])=>v.n===note&&v.o===oct);
+      if(kb&&showKb){const s=document.createElement('span');s.className='key-shortcut';s.textContent=kb[0].toUpperCase();div.appendChild(s);}
+      addKE(div,freq);piano.appendChild(div);
+    });
+  }
+  const BO={C:0,D:1,F:3,G:4,A:5};
+  for(let oct=0;oct<NUM_OCTS;oct++){
+    Object.entries(BO).forEach(([wn,wi])=>{
+      const bn=BLACK_MAP[wn];if(!bn)return;
+      const ro=baseOct+oct,midi=noteToMidi(bn,ro),freq=midiFreq(midi);
+      const div=document.createElement('div');div.className='bk';
+      div.dataset.freq=freq.toFixed(2);div.dataset.note=bn;div.dataset.oct=ro;div.dataset.midi=midi;
+      div.style.left=((oct*7+wi)*W+W*.68)+'%';div.style.width=(W*.58)+'%';
+      const kb=Object.entries(KB).find(([k,v])=>v.n===bn&&v.o===oct);
+      if(kb&&showKb){const s=document.createElement('span');s.className='key-shortcut';s.textContent=kb[0].toUpperCase();div.appendChild(s);}
+      addKE(div,freq);piano.appendChild(div);
+    });
+  }
+  quickHL();
+}
+
+function addKE(div,freq){
+  let pr=false;
+  div.addEventListener('mousedown',e=>{e.preventDefault();pr=true;pressK(div,freq);});
+  div.addEventListener('mouseenter',e=>{if(e.buttons===1&&!pr){pr=true;pressK(div,freq);}});
+  div.addEventListener('mouseup',()=>{pr=false;releaseK(div,freq);});
+  div.addEventListener('mouseleave',()=>{if(pr){pr=false;releaseK(div,freq);}});
+  div.addEventListener('touchstart',e=>{e.preventDefault();pressK(div,freq);},{passive:false});
+  div.addEventListener('touchend',()=>releaseK(div,freq));
+}
+
+function pressK(div,freq){
+  div.classList.add('active');synth.on(parseFloat(freq));
+  document.getElementById('curNote').textContent=div.dataset.note+div.dataset.oct;
+  document.getElementById('curFreq').textContent=parseFloat(freq).toFixed(2)+' Hz';
+}
+function releaseK(div,freq){div.classList.remove('active');synth.off(parseFloat(freq));}
+
+const keysDown=new Set();
+document.addEventListener('keydown',e=>{
+  if(e.target.tagName==='SELECT'||e.target.tagName==='INPUT')return;
+  const k=e.key.toLowerCase();if(keysDown.has(k))return;
+  if(KB[k]){keysDown.add(k);const{n,o}=KB[k],ro=baseOct+o,freq=midiFreq(noteToMidi(n,ro));
+    const div=document.querySelector(`[data-note="${n}"][data-oct="${ro}"]`);if(div)pressK(div,freq.toFixed(2));}
+  if(k==='z')shiftOct(-1);if(k==='x')shiftOct(1);
+});
+document.addEventListener('keyup',e=>{
+  const k=e.key.toLowerCase();keysDown.delete(k);
+  if(KB[k]){const{n,o}=KB[k],ro=baseOct+o,freq=midiFreq(noteToMidi(n,ro));
+    const div=document.querySelector(`[data-note="${n}"][data-oct="${ro}"]`);if(div)releaseK(div,freq.toFixed(2));}
+});
+
+function shiftOct(d){baseOct=Math.max(1,Math.min(6,baseOct+d));document.getElementById('octDisp').textContent=baseOct;buildPiano();}
+function toggleSustain(){synth.sustain=!synth.sustain;const b=document.getElementById('sustBtn');b.textContent=synth.sustain?'On':'Off';b.classList.toggle('on',synth.sustain);}
+function toggleLabels(){showLabels=!showLabels;document.getElementById('btnLbl').classList.toggle('on2',showLabels);buildPiano();}
+function toggleKb(){showKb=!showKb;document.getElementById('btnKb').classList.toggle('on2',showKb);buildPiano();}
+
+// ════════════════════════════════════════
+// HIGHLIGHTS
+// ════════════════════════════════════════
+function clearHL(){document.querySelectorAll('.wk,.bk').forEach(k=>{k.classList.remove('hl-root','hl-scale','hl-chord');const d=k.querySelector('.key-deg');if(d)d.remove();});}
+
+function hlMidi(midi,cls,deg=''){
+  const div=document.querySelector(`[data-midi="${midi}"]`);if(!div)return;
+  div.classList.add(cls);
+  if(deg){let d=div.querySelector('.key-deg');if(!d){d=document.createElement('div');d.className='key-deg';div.appendChild(d);}d.textContent=deg;}
+}
+
+function hlScale(root,scaleName){
+  clearHL();const ivs=SCALES[scaleName];if(!ivs)return;
+  const ri=NOTES.indexOf(root);
+  for(let m=0;m<128;m++){const s=((m-ri-12)%12+12)%12;if(ivs.includes(s)){const di=ivs.indexOf(s);hlMidi(m,s===0?'hl-root':'hl-scale',s===0?'R':(di+1)+'');}}
+}
+
+function hlChord(root,quality,inv,oct){
+  clearHL();const chord=CHORDS[quality];if(!chord)return;
+  const rm=noteToMidi(root,parseInt(oct));
+  let midis=chord.i.map(i=>rm+i);const inv2=parseInt(inv);
+  for(let i=0;i<inv2;i++)midis[i]+=12;midis.sort((a,b)=>a-b);
+  midis.forEach((m,i)=>hlMidi(m,i===0?'hl-root':'hl-chord',i===0?'R':''));
+}
+
+function quickHL(){
+  const root=document.getElementById('qRoot').value,scale=document.getElementById('qScale').value;
+  if(!scale){clearHL();return;}
+  hlScale(root,scale);
+}
+
+// ════════════════════════════════════════
+// CHORD EXPLORER
+// ════════════════════════════════════════
+function updateChord(){
+  const root=document.getElementById('cRoot').value,qual=document.getElementById('cQual').value;
+  const inv=document.getElementById('cInv').value,oct=document.getElementById('cOct').value;
+  const chord=CHORDS[qual];if(!chord)return;
+  const rm=noteToMidi(root,parseInt(oct));
+  let midis=chord.i.map(i=>rm+i);const inv2=parseInt(inv);
+  for(let i=0;i<inv2;i++)midis[i]+=12;midis.sort((a,b)=>a-b);
+  const enh=ENH[root]?` / ${ENH[root]}`:'';
+  document.getElementById('chordName').textContent=root+enh+' '+chord.name;
+  document.getElementById('chordFormula').textContent=chord.formula;
+  const ne=document.getElementById('chordNotes');ne.innerHTML='';
+  midis.forEach(m=>{const n=NOTES[m%12],c=n.replace('#','s');ne.innerHTML+=`<span class="np ${c}">${n}</span>`;});
+  hlChord(root,qual,inv,oct);
+  document.getElementById('qScale').value='';
+}
+
+function playChord(){
+  const root=document.getElementById('cRoot').value,qual=document.getElementById('cQual').value;
+  const inv=document.getElementById('cInv').value,oct=document.getElementById('cOct').value;
+  const chord=CHORDS[qual];if(!chord)return;
+  const rm=noteToMidi(root,parseInt(oct));
+  let midis=chord.i.map(i=>rm+i);const inv2=parseInt(inv);
+  for(let i=0;i<inv2;i++)midis[i]+=12;midis.sort((a,b)=>a-b);
+  synth.allOff();setTimeout(()=>midis.forEach(m=>synth.on(midiFreq(m),.85)),30);
+}
+
+function playArp(){
+  const root=document.getElementById('cRoot').value,qual=document.getElementById('cQual').value,oct=document.getElementById('cOct').value;
+  const chord=CHORDS[qual];if(!chord)return;
+  const rm=noteToMidi(root,parseInt(oct));
+  synth.allOff();chord.i.forEach((iv,i)=>setTimeout(()=>synth.on(midiFreq(rm+iv),.8),i*185));
+}
+
+// ════════════════════════════════════════
+// SCALE EXPLORER
+// ════════════════════════════════════════
+function updateScale(){
+  const root=document.getElementById('sRoot').value,sn=document.getElementById('sType').value,oct=document.getElementById('sOct').value;
+  const ivs=SCALES[sn];if(!ivs)return;
+  const rm=noteToMidi(root,parseInt(oct));
+  const enh=ENH[root]?` / ${ENH[root]}`:'';
+  document.getElementById('scaleName').textContent=root+enh+' '+(SCALE_NAMES[sn]||sn);
+  document.getElementById('scaleFormula').textContent=SCALE_FRM[sn]||'';
+  const ne=document.getElementById('scaleNotes');ne.innerHTML='';
+  [...ivs,12].forEach(iv=>{const n=NOTES[(rm+iv)%12],c=n.replace('#','s');ne.innerHTML+=`<span class="np ${c}">${n}</span>`;});
+  hlScale(root,sn);
+  document.getElementById('qRoot').value=root;document.getElementById('qScale').value=sn;
+}
+
+async function playScaleMidis(midis){
+  const sp=parseInt(document.getElementById('sSpeed').value);synth.allOff();
+  for(let i=0;i<midis.length;i++){await new Promise(r=>setTimeout(r,sp));synth.on(midiFreq(midis[i]),.75);setTimeout(()=>synth.off(midiFreq(midis[i])),sp*.85);}
+}
+
+function playScaleAsc(){
+  const root=document.getElementById('sRoot').value,sn=document.getElementById('sType').value,oct=document.getElementById('sOct').value;
+  const ivs=SCALES[sn];if(!ivs)return;const rm=noteToMidi(root,parseInt(oct));
+  playScaleMidis([...ivs.map(i=>rm+i),rm+12]);
+}
+function playScaleDesc(){
+  const root=document.getElementById('sRoot').value,sn=document.getElementById('sType').value,oct=document.getElementById('sOct').value;
+  const ivs=SCALES[sn];if(!ivs)return;const rm=noteToMidi(root,parseInt(oct));
+  playScaleMidis([...ivs.map(i=>rm+i),rm+12].reverse());
+}
+
+// ════════════════════════════════════════
+// TABS
+// ════════════════════════════════════════
+function switchTab(groupId,targetId,btn){
+  const grp=document.getElementById(groupId);
+  grp.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');
+  const par=btn.closest('.section')||btn.closest('section')||btn.parentElement.parentElement;
+  par.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.getElementById(targetId).classList.add('active');
+}
+
+// ════════════════════════════════════════
+// LESSONS
+// ════════════════════════════════════════
+const LESSONS={
+beg:[
+  {id:'l1',title:'The Piano Keyboard Layout',desc:'Learn key names, octave patterns, and how to navigate the keyboard with confidence.',tags:['basics','keys'],badge:'mb-beg',
+   content:`<span class="mb-beg">Beginner · Lesson 1</span><h2>The Piano Keyboard Layout</h2><p>A standard piano has <strong>88 keys</strong>: 52 white and 36 black, repeating in groups of 12 called octaves.</p><h3>Finding Middle C</h3><p>Middle C (C4) is closest to the center of the keyboard, just left of a group of two black keys.</p><h3>White Keys</h3><p>Named A through G, cycling repeatedly: C D E F G A B | C D E F G A B…</p><h3>Black Keys</h3><p>Named as sharps (#) or flats (♭) of adjacent white keys. The groups of 2 black keys sit around C, D, E. Groups of 3 sit around F, G, A, B.</p><div class="info"><p>💡 On this site: press <strong>A S D F G H J</strong> on your keyboard to play C D E F G A B!</p></div>`},
+  {id:'l2',title:'Reading Sheet Music Basics',desc:'Treble clef, bass clef, note names on the staff, and basic note values.',tags:['notation'],badge:'mb-beg',
+   content:`<span class="mb-beg">Beginner · Lesson 2</span><h2>Reading Sheet Music</h2><p>Sheet music uses a <strong>staff</strong> — five horizontal lines — where higher lines mean higher notes.</p><h3>Treble Clef (𝄞) — Right Hand</h3><p>Lines bottom to top: <strong>E G B D F</strong> (Every Good Boy Does Fine). Spaces: <strong>F A C E</strong>.</p><h3>Bass Clef (𝄢) — Left Hand</h3><p>Lines: <strong>G B D F A</strong>. Spaces: <strong>A C E G</strong>.</p><h3>Note Values</h3><ul><li>Whole note (○) = 4 beats</li><li>Half note = 2 beats</li><li>Quarter note (♩) = 1 beat</li><li>Eighth note (♪) = ½ beat</li></ul>`},
+  {id:'l3',title:'Hand Position & Posture',desc:'Correct sitting height, wrist position, curved fingers, and how to avoid injury.',tags:['technique'],badge:'mb-beg',
+   content:`<span class="mb-beg">Beginner · Lesson 3</span><h2>Hand Position & Posture</h2><h3>Sitting</h3><p>Sit at the center of the keyboard, bench about 15–20 inches from keys. Forearms roughly parallel to the floor. Feet flat.</p><h3>Hand Shape</h3><p>Imagine holding a small ball. Fingers gently <strong>curved</strong>, not flat or stiff. Strike keys with the fingertip, not the flat pad.</p><h3>Finger Numbers</h3><p>Thumb=1, Index=2, Middle=3, Ring=4, Pinky=5. Same for both hands.</p><div class="info"><p>💡 A relaxed wrist is critical. If your wrist tenses up, shake out your hand and reset.</p></div>`},
+  {id:'l4',title:'C Major Scale & Fingering',desc:'Your first scale. The W–W–H pattern, correct fingering, and hands-separate practice.',tags:['scales','fingering'],badge:'mb-beg',
+   content:`<span class="mb-beg">Beginner · Lesson 4</span><h2>The C Major Scale</h2><p>C major uses only white keys: <strong>C D E F G A B C</strong>. Pattern: <strong>W–W–H–W–W–W–H</strong> (W=whole step, H=half step).</p><h3>Right Hand Fingering</h3><p>C(1) D(2) E(3) → thumb under → F(1) G(2) A(3) B(4) C(5)</p><h3>Left Hand Fingering</h3><p>C(5) D(4) E(3) F(2) G(1) → middle finger over → A(3) B(2) C(1)</p><div class="info"><p>💡 Use the Scale Explorer above — select C Major and press "Ascending" to hear it, then play along.</p></div>`},
+  {id:'l5',title:'Your First 3 Chords: C, F, G',desc:'The most common chord progression in pop music. Play your first song today.',tags:['chords'],badge:'mb-beg',
+   content:`<span class="mb-beg">Beginner · Lesson 5</span><h2>Chords: C, F, G</h2><p>These 3 chords appear in hundreds of songs. Master them first.</p><h3>C Major</h3><p>C – E – G · Thumb on C, middle on E, pinky on G.</p><h3>F Major</h3><p>F – A – C · Thumb on F, middle on A, pinky on C.</p><h3>G Major</h3><p>G – B – D · Thumb on G, middle on B, pinky on D.</p><div class="info"><p>💡 Songs using C–F–G: "Let Her Go" (Passenger), "Brown Eyed Girl", "Knockin' on Heaven's Door". Practice switching until each transition takes under 1 second.</p></div>`},
+  {id:'l6',title:'Time Signatures & Rhythm',desc:'4/4, 3/4, 6/8 explained. How to count, feel the beat, and stay in time.',tags:['rhythm'],badge:'mb-beg',
+   content:`<span class="mb-beg">Beginner · Lesson 6</span><h2>Time Signatures</h2><h3>4/4 (Common Time)</h3><p>4 quarter-note beats per measure. Count: <strong>1–2–3–4</strong>. Most pop, rock, jazz. The most common time signature in Western music.</p><h3>3/4 (Waltz)</h3><p>3 beats per measure. Strong–weak–weak feel. Count: <strong>1–2–3</strong>. Used in waltzes, ballads.</p><h3>6/8</h3><p>6 eighth notes felt as 2 groups of 3. Lilting, flowing. Count: <strong>1–2–3–4–5–6</strong>. Used in jigs, barcarolles.</p><div class="info"><p>💡 Use a metronome app set to 60 BPM and always count out loud when learning new rhythms.</p></div>`},
+],
+int:[
+  {id:'l7',title:'Major Scale Formula in Every Key',desc:'Build a major scale from any root using W–W–H–W–W–W–H. No more memorizing.',tags:['scales','theory'],badge:'mb-int',
+   content:`<span class="mb-int">Intermediate · Lesson 7</span><h2>Major Scale Formula</h2><p>Every major scale follows: <strong>Whole–Whole–Half–Whole–Whole–Whole–Half</strong>.</p><h3>G Major Example</h3><p>G→A(W)→B(W)→C(H)→D(W)→E(W)→F♯(W)→G(H) = <strong>G A B C D E F♯</strong></p><h3>F Major Example</h3><p>F→G(W)→A(W)→B♭(H)→C(W)→D(W)→E(W)→F(H) = <strong>F G A B♭ C D E</strong></p><div class="info"><p>💡 Use the Scale Explorer to verify your answers — select any key + Major to see all the notes highlighted.</p></div>`},
+  {id:'l8',title:'Minor Scales & Relative Minor',desc:'Natural, harmonic, melodic minor. How every major key has a relative minor twin.',tags:['scales','minor'],badge:'mb-int',
+   content:`<span class="mb-int">Intermediate · Lesson 8</span><h2>Minor Scales</h2><h3>Natural Minor</h3><p>Formula: W–H–W–W–H–W–W. A natural minor = A B C D E F G.</p><h3>Harmonic Minor</h3><p>Raises the 7th by a half step. A harmonic minor = A B C D E F G♯. Creates an exotic, tense sound.</p><h3>Melodic Minor</h3><p>Ascending: raises 6th and 7th. Descending: reverts to natural minor. A melodic = A B C D E F♯ G♯ (ascending).</p><h3>Relative Minor</h3><p>Every major key shares its notes with a minor key starting on the 6th degree. C major ↔ A minor — same 7 notes, different tonic.</p>`},
+  {id:'l9',title:'Seventh Chords',desc:'Maj7, Dom7, m7 — the chords that define jazz, blues, and sophisticated harmony.',tags:['chords','jazz'],badge:'mb-int',
+   content:`<span class="mb-int">Intermediate · Lesson 9</span><h2>Seventh Chords</h2><p>Seventh chords add a 4th note — the 7th interval — on top of a triad.</p><h3>Dominant 7th (e.g. G7)</h3><p>Formula: 1–3–5–♭7. G7 = G B D F. Creates strong tension that wants to resolve to the I chord.</p><h3>Major 7th (e.g. Cmaj7)</h3><p>Formula: 1–3–5–7. Cmaj7 = C E G B. Dreamy, romantic, jazz ballad.</p><h3>Minor 7th (e.g. Am7)</h3><p>Formula: 1–♭3–5–♭7. Am7 = A C E G. Smooth, melancholy, soulful.</p><div class="info"><p>💡 In jazz's most important progression: <strong>ii–V–I</strong> all three appear: Dm7–G7–Cmaj7.</p></div>`},
+  {id:'l10',title:'The Chord Number System',desc:'Roman numerals, Nashville system, transposing songs instantly to any key.',tags:['harmony','theory'],badge:'mb-int',
+   content:`<span class="mb-int">Intermediate · Lesson 10</span><h2>Chord Number System</h2><p>Roman numerals describe chord function regardless of key: I ii iii IV V vi vii°</p><h3>Major Key Pattern</h3><p>I(Maj) ii(min) iii(min) IV(Maj) V(Maj) vi(min) vii°(dim)</p><h3>Common Progressions</h3><ul><li><strong>I–V–vi–IV:</strong> Most popular pop progression. In C: C–G–Am–F</li><li><strong>ii–V–I:</strong> Jazz foundation. In C: Dm7–G7–Cmaj7</li><li><strong>I–IV–V:</strong> Blues/rock. In C: C–F–G</li></ul><div class="info"><p>💡 Once you know a song is "I–V–vi–IV" you can instantly play it in all 12 keys.</p></div>`},
+  {id:'l11',title:'Pentatonic Scales & Improvisation',desc:'The 5-note scales that make every note sound good. Play your first solo.',tags:['improv','scales'],badge:'mb-int',
+   content:`<span class="mb-int">Intermediate · Lesson 11</span><h2>Pentatonic Scales</h2><p>Pentatonic scales have 5 notes. By removing the "problem" notes, every remaining note sounds comfortable over the matching chords.</p><h3>Major Pentatonic</h3><p>Formula: 1–2–3–5–6. C major pentatonic: C D E G A. Works great over I, IV, V in major keys.</p><h3>Minor Pentatonic</h3><p>Formula: 1–♭3–4–5–♭7. A minor pentatonic: A C D E G. The most used scale in rock solos.</p><div class="info"><p>💡 C major pentatonic and A minor pentatonic use the same notes — relative pentatonics. Switch freely when improvising.</p></div>`},
+  {id:'l12',title:'Circle of Fifths in Practice',desc:'Use the Circle for transposing, finding key signatures, and building chord progressions.',tags:['theory','circle'],badge:'mb-int',
+   content:`<span class="mb-int">Intermediate · Lesson 12</span><h2>Circle of Fifths</h2><p>The Circle arranges all 12 keys so adjacent keys share maximum notes. Clockwise = add sharps. Counter-clockwise = add flats.</p><h3>Practical Uses</h3><ul><li><strong>Key signatures:</strong> Count clockwise steps from C = number of sharps</li><li><strong>Chord progressions:</strong> Adjacent keys make smooth, natural-sounding progressions</li><li><strong>Relative minors:</strong> Inner ring of the circle shows each key's relative minor</li><li><strong>Modulation:</strong> Moving to adjacent key sounds natural; skipping several sounds dramatic</li></ul>`},
+],
+adv:[
+  {id:'l13',title:'The 7 Modes of the Major Scale',desc:'Dorian, Phrygian, Lydian, Mixolydian, Locrian — what they sound like and when to use them.',tags:['modes','advanced'],badge:'mb-adv',
+   content:`<span class="mb-adv">Concepts · Modes</span><h2>The 7 Modes</h2><p>Modes are built by starting the major scale on a different degree. Each has a unique character.</p><ul><li><strong>Ionian (I):</strong> = Major scale. Bright, happy</li><li><strong>Dorian (ii):</strong> Minor with ♮6. Jazzy, funky (Santana)</li><li><strong>Phrygian (iii):</strong> Spanish/flamenco. Dark, exotic</li><li><strong>Lydian (IV):</strong> Major with ♯4. Dreamy, floating (film music)</li><li><strong>Mixolydian (V):</strong> Major with ♭7. Rock/blues feel (Hendrix)</li><li><strong>Aeolian (vi):</strong> = Natural Minor. Dark, emotional</li><li><strong>Locrian (vii°):</strong> Unstable, dissonant. Rarely used alone</li></ul>`},
+  {id:'l14',title:'Jazz Harmony: ii–V–I & Extensions',desc:'Tritone substitutions, chord extensions (9ths, 11ths, 13ths), and voice leading.',tags:['jazz','harmony'],badge:'mb-adv',
+   content:`<span class="mb-adv">Concepts · Jazz</span><h2>Jazz Harmony</h2><h3>ii–V–I</h3><p>In C major: <strong>Dm7–G7–Cmaj7</strong>. The foundational jazz progression. Appears in thousands of standards.</p><h3>Extensions</h3><p>Jazz adds 9ths, 11ths, 13ths on top of 7th chords. Dm9 = D F A C E. These extensions add color without changing function.</p><h3>Tritone Substitution</h3><p>Replace a dominant 7th with another dom7 chord a tritone away. G7 → D♭7. Both share the same tritone interval (B–F), creating the same resolution feeling.</p><h3>Voice Leading</h3><p>Move each chord tone the shortest distance possible when changing chords. Creates smooth, professional harmony.</p>`},
+  {id:'l15',title:'Blues Theory & the 12-Bar Form',desc:'12-bar blues structure, dominant 7th chords, blue notes, and the blues scale.',tags:['blues','scales'],badge:'mb-adv',
+   content:`<span class="mb-adv">Concepts · Blues</span><h2>Blues Theory</h2><h3>12-Bar Blues in A</h3><ul><li>Bars 1–4: A7 A7 A7 A7</li><li>Bars 5–6: D7 D7</li><li>Bars 7–8: A7 A7</li><li>Bars 9–10: E7 D7</li><li>Bars 11–12: A7 E7 (turnaround)</li></ul><h3>Blue Notes</h3><p>The ♭3, ♭5, and ♭7 create the characteristic blues tension. They're played "in between" the natural pitches for expressive effect.</p><h3>Blues Scale</h3><p>Minor pentatonic + ♭5. A blues: A C D E♭ E G. The E♭ is the blue note — that one addition defines the entire sound.</p>`},
+  {id:'l16',title:'Song Structure & Composition',desc:'Verse, chorus, bridge, AABA form. Writing melodies over chord progressions.',tags:['composition'],badge:'mb-adv',
+   content:`<span class="mb-adv">Concepts · Composition</span><h2>Song Structure</h2><h3>Common Forms</h3><ul><li><strong>Verse–Chorus (AB):</strong> Verse tells the story, chorus delivers the hook</li><li><strong>Verse–Chorus–Bridge (ABA):</strong> Bridge provides contrast before the final chorus</li><li><strong>32-bar AABA:</strong> Classic jazz form, 8 bars each</li></ul><h3>Writing Melodies</h3><p>Strong melodies prominently use scale degrees 1, 3, and 5. Stepwise motion (adjacent notes) is easier to sing; leaps provide drama.</p><h3>Tension & Release</h3><p>All compelling music balances tension (dominant chords, dissonance) with release (tonic chords, resolution). Never stay in one state too long.</p>`},
+]};
+
+function renderLessons(){
+  const done=JSON.parse(localStorage.getItem('pp_done')||'[]');
+  const grids={beg:'grid-beg',int:'grid-int',adv:'grid-adv'};
+  Object.entries(LESSONS).forEach(([lvl,lessons])=>{
+    const g=document.getElementById(grids[lvl]);if(!g)return;g.innerHTML='';
+    lessons.forEach(l=>{
+      const d=document.createElement('div');d.className='lcard'+(done.includes(l.id)?' done':'');
+      d.innerHTML=`<div class="l-num">Lesson ${l.id.replace('l','')}</div><div class="l-title">${l.title}</div><div class="l-desc">${l.desc}</div><div class="l-tags">${l.tags.map(t=>`<span class="l-tag">${t}</span>`).join('')}</div>`;
+      d.onclick=()=>openLesson(l);g.appendChild(d);
+    });
+  });
+}
+
+function openLesson(l){
+  document.getElementById('modalContent').innerHTML=l.content+`<div style="margin-top:1.25rem;display:flex;gap:.65rem"><button class="btn on" onclick="markDone('${l.id}')">✓ Mark Complete</button><button class="btn" onclick="document.getElementById('lessonModal').classList.remove('open')">Close</button></div>`;
+  document.getElementById('lessonModal').classList.add('open');
+}
+function markDone(id){
+  let done=JSON.parse(localStorage.getItem('pp_done')||'[]');
+  if(!done.includes(id))done.push(id);
+  localStorage.setItem('pp_done',JSON.stringify(done));
+  document.getElementById('lessonModal').classList.remove('open');
+  renderLessons();
+}
+
+// ════════════════════════════════════════
+// THEORY CHARTS
+// ════════════════════════════════════════
+function buildTheory(){
+  const wrap=document.getElementById('theoryCharts');
+  const CHARTS=[
+['th-7th',`<div class="scroll-x"><table><thead><tr><th>Type</th><th>Symbol</th><th>Formula</th><th>Semitones</th><th>Notes in C</th><th>Character</th></tr></thead><tbody>
+<tr><td><span class="cn">Major 7th</span></td><td><span class="qtag q-maj">Maj7</span></td><td class="fm">1–3–5–7</td><td class="fm">0–4–7–11</td><td><div class="notes-row"><span class="np C">C</span><span class="np E">E</span><span class="np G">G</span><span class="np B">B</span></div></td><td style="color:var(--text2);font-size:.68rem">Dreamy, lush</td></tr>
+<tr><td><span class="cn">Dominant 7th</span></td><td><span class="qtag q-dom">7</span></td><td class="fm">1–3–5–♭7</td><td class="fm">0–4–7–10</td><td><div class="notes-row"><span class="np C">C</span><span class="np E">E</span><span class="np G">G</span><span class="np As">B♭</span></div></td><td style="color:var(--text2);font-size:.68rem">Bluesy, tense</td></tr>
+<tr><td><span class="cn">Minor 7th</span></td><td><span class="qtag q-min">m7</span></td><td class="fm">1–♭3–5–♭7</td><td class="fm">0–3–7–10</td><td><div class="notes-row"><span class="np C">C</span><span class="np Ds">E♭</span><span class="np G">G</span><span class="np As">B♭</span></div></td><td style="color:var(--text2);font-size:.68rem">Smooth, soulful</td></tr>
+<tr><td><span class="cn">Minor Major 7th</span></td><td><span class="qtag q-min">mMaj7</span></td><td class="fm">1–♭3–5–7</td><td class="fm">0–3–7–11</td><td><div class="notes-row"><span class="np C">C</span><span class="np Ds">E♭</span><span class="np G">G</span><span class="np B">B</span></div></td><td style="color:var(--text2);font-size:.68rem">Dark, mysterious</td></tr>
+<tr><td><span class="cn">Half-Diminished</span></td><td><span class="qtag q-half">ø7</span></td><td class="fm">1–♭3–♭5–♭7</td><td class="fm">0–3–6–10</td><td><div class="notes-row"><span class="np C">C</span><span class="np Ds">E♭</span><span class="np Fs">G♭</span><span class="np As">B♭</span></div></td><td style="color:var(--text2);font-size:.68rem">Uneasy, jazz ii</td></tr>
+<tr><td><span class="cn">Diminished 7th</span></td><td><span class="qtag q-dim">°7</span></td><td class="fm">1–♭3–♭5–♭♭7</td><td class="fm">0–3–6–9</td><td><div class="notes-row"><span class="np C">C</span><span class="np Ds">E♭</span><span class="np Fs">G♭</span><span class="np A">A</span></div></td><td style="color:var(--text2);font-size:.68rem">Dramatic</td></tr>
+<tr><td><span class="cn">Augmented Maj7</span></td><td><span class="qtag q-aug">+Maj7</span></td><td class="fm">1–3–♯5–7</td><td class="fm">0–4–8–11</td><td><div class="notes-row"><span class="np C">C</span><span class="np E">E</span><span class="np Gs">G♯</span><span class="np B">B</span></div></td><td style="color:var(--text2);font-size:.68rem">Ethereal</td></tr>
+</tbody></table></div>`],
+['th-tri',`<div class="scroll-x"><table><thead><tr><th>Type</th><th>Formula</th><th>Intervals</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>A</th><th>B</th></tr></thead><tbody>
+<tr><td><span class="qtag q-maj">Major</span></td><td class="fm">1–3–5</td><td class="fm">0–4–7</td><td class="fm">C E G</td><td class="fm">D F♯ A</td><td class="fm">E G♯ B</td><td class="fm">F A C</td><td class="fm">G B D</td><td class="fm">A C♯ E</td><td class="fm">B D♯ F♯</td></tr>
+<tr><td><span class="qtag q-min">Minor</span></td><td class="fm">1–♭3–5</td><td class="fm">0–3–7</td><td class="fm">C E♭ G</td><td class="fm">D F A</td><td class="fm">E G B</td><td class="fm">F A♭ C</td><td class="fm">G B♭ D</td><td class="fm">A C E</td><td class="fm">B D F♯</td></tr>
+<tr><td><span class="qtag q-dim">Diminished</span></td><td class="fm">1–♭3–♭5</td><td class="fm">0–3–6</td><td class="fm">C E♭ G♭</td><td class="fm">D F A♭</td><td class="fm">E G B♭</td><td class="fm">F A♭ C♭</td><td class="fm">G B♭ D♭</td><td class="fm">A C E♭</td><td class="fm">B D F</td></tr>
+<tr><td><span class="qtag q-aug">Augmented</span></td><td class="fm">1–3–♯5</td><td class="fm">0–4–8</td><td class="fm">C E G♯</td><td class="fm">D F♯ A♯</td><td class="fm">E G♯ B♯</td><td class="fm">F A C♯</td><td class="fm">G B D♯</td><td class="fm">A C♯ E♯</td><td class="fm">B D♯ F♯♯</td></tr>
+</tbody></table></div>`],
+['th-num',`<p style="color:var(--text2);font-size:.78rem;margin-bottom:1rem;line-height:1.7">Roman numerals describe chord function regardless of key. UPPERCASE = Major, lowercase = minor.</p>
+<p style="font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--acc);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.55rem">Major Key</p>
+<div class="num-grid"><div class="nc"><div class="nc-rom">I</div><div class="nc-q"><span class="qtag q-maj">Maj</span></div><div class="nc-fn">Tonic</div></div><div class="nc"><div class="nc-rom" style="color:var(--acc2)">ii</div><div class="nc-q"><span class="qtag q-min">min</span></div><div class="nc-fn">Supertonic</div></div><div class="nc"><div class="nc-rom" style="color:var(--acc2)">iii</div><div class="nc-q"><span class="qtag q-min">min</span></div><div class="nc-fn">Mediant</div></div><div class="nc"><div class="nc-rom">IV</div><div class="nc-q"><span class="qtag q-maj">Maj</span></div><div class="nc-fn">Subdominant</div></div><div class="nc"><div class="nc-rom">V</div><div class="nc-q"><span class="qtag q-maj">Maj</span></div><div class="nc-fn">Dominant</div></div><div class="nc"><div class="nc-rom" style="color:var(--acc2)">vi</div><div class="nc-q"><span class="qtag q-min">min</span></div><div class="nc-fn">Submediant</div></div><div class="nc"><div class="nc-rom" style="color:#e07070">vii°</div><div class="nc-q"><span class="qtag q-dim">dim</span></div><div class="nc-fn">Leading</div></div></div>
+<div class="scroll-x"><table><thead><tr><th>Key</th><th>I</th><th>ii</th><th>iii</th><th>IV</th><th>V</th><th>vi</th><th>vii°</th></tr></thead><tbody>
+<tr><td class="cn">C</td><td>C</td><td>Dm</td><td>Em</td><td>F</td><td>G</td><td>Am</td><td>B°</td></tr>
+<tr><td class="cn">G</td><td>G</td><td>Am</td><td>Bm</td><td>C</td><td>D</td><td>Em</td><td>F♯°</td></tr>
+<tr><td class="cn">D</td><td>D</td><td>Em</td><td>F♯m</td><td>G</td><td>A</td><td>Bm</td><td>C♯°</td></tr>
+<tr><td class="cn">A</td><td>A</td><td>Bm</td><td>C♯m</td><td>D</td><td>E</td><td>F♯m</td><td>G♯°</td></tr>
+<tr><td class="cn">E</td><td>E</td><td>F♯m</td><td>G♯m</td><td>A</td><td>B</td><td>C♯m</td><td>D♯°</td></tr>
+<tr><td class="cn">F</td><td>F</td><td>Gm</td><td>Am</td><td>B♭</td><td>C</td><td>Dm</td><td>E°</td></tr>
+<tr><td class="cn">B♭</td><td>B♭</td><td>Cm</td><td>Dm</td><td>E♭</td><td>F</td><td>Gm</td><td>A°</td></tr>
+</tbody></table></div>`],
+['th-cof',`<svg class="circle-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+<defs><radialGradient id="cg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1c1c24"/><stop offset="100%" stop-color="#0c0c10"/></radialGradient></defs>
+<circle cx="250" cy="250" r="248" fill="url(#cg)" stroke="#2a2a38" stroke-width="1"/>
+<circle cx="250" cy="250" r="210" fill="none" stroke="#2a2a38" stroke-width="1"/>
+<circle cx="250" cy="250" r="150" fill="none" stroke="#2a2a38" stroke-width="1"/>
+<circle cx="250" cy="250" r="92" fill="none" stroke="#2a2a38" stroke-width="1"/>
+<circle cx="250" cy="250" r="46" fill="#1c1c24" stroke="#2a2a38"/>
+<text x="250" y="246" text-anchor="middle" font-family="Playfair Display,serif" font-size="11" fill="#c8a96e">Circle</text>
+<text x="250" y="261" text-anchor="middle" font-family="Playfair Display,serif" font-size="11" fill="#c8a96e">of 5ths</text>
+${[['C','am','0♯/♭'],['G','em','1♯'],['D','bm','2♯'],['A','f♯m','3♯'],['E','c♯m','4♯'],['B','g♯m','5♯'],['F♯/G♭','d♯m','6♯/♭'],['D♭','b♭m','5♭'],['A♭','fm','4♭'],['E♭','cm','3♭'],['B♭','gm','2♭'],['F','dm','1♭']].map(([maj,min,acc],i)=>{
+const a=(i*30-90)*Math.PI/180,mx=250+185*Math.cos(a),my=250+185*Math.sin(a),rx=250+125*Math.cos(a),ry=250+125*Math.sin(a),ax=250+110*Math.cos(a),ay=250+110*Math.sin(a),col=i<=5?'#c8a96e':'#7eb8c4',ra=-i*30;
+return `<text x="${mx}" y="${my}" text-anchor="middle" dominant-baseline="central" font-family="Playfair Display,serif" font-size="17" font-weight="700" fill="${col}" transform="rotate(${ra},${mx},${my})">${maj}</text><text x="${rx}" y="${ry}" text-anchor="middle" dominant-baseline="central" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#9994a0" transform="rotate(${ra},${rx},${ry})">${min}</text><text x="${ax}" y="${ay}" text-anchor="middle" dominant-baseline="central" font-family="IBM Plex Mono,monospace" font-size="8" fill="#5c5870" transform="rotate(${ra},${ax},${ay})">${acc}</text>`;}).join('')}
+</svg>
+<div class="scroll-x" style="margin-top:1.25rem"><table><thead><tr><th>Key</th><th>Sharps/Flats</th><th>Accidentals</th><th>Relative Minor</th></tr></thead><tbody>
+<tr><td class="cn">C</td><td>—</td><td style="color:var(--text3)">none</td><td>A minor</td></tr>
+<tr><td class="cn">G</td><td><span class="sb">1♯</span></td><td class="fm">F♯</td><td>E minor</td></tr>
+<tr><td class="cn">D</td><td><span class="sb">2♯</span></td><td class="fm">F♯ C♯</td><td>B minor</td></tr>
+<tr><td class="cn">A</td><td><span class="sb">3♯</span></td><td class="fm">F♯ C♯ G♯</td><td>F♯ minor</td></tr>
+<tr><td class="cn">F</td><td><span class="sb">1♭</span></td><td class="fm">B♭</td><td>D minor</td></tr>
+<tr><td class="cn">B♭</td><td><span class="sb">2♭</span></td><td class="fm">B♭ E♭</td><td>G minor</td></tr>
+<tr><td class="cn">E♭</td><td><span class="sb">3♭</span></td><td class="fm">B♭ E♭ A♭</td><td>C minor</td></tr>
+</tbody></table></div>`],
+['th-int',`<div class="int-grid">${[['P1','Perfect Unison',0,'C→C'],['m2','Minor 2nd',1,'C→D♭'],['M2','Major 2nd',2,'C→D'],['m3','Minor 3rd',3,'C→E♭'],['M3','Major 3rd',4,'C→E'],['P4','Perfect 4th',5,'C→F'],['TT','Tritone',6,'C→F♯'],['P5','Perfect 5th',7,'C→G'],['m6','Minor 6th',8,'C→A♭'],['M6','Major 6th',9,'C→A'],['m7','Minor 7th',10,'C→B♭'],['M7','Major 7th',11,'C→B'],['P8','Octave',12,"C→C'"]].map(([a,n,s,ex])=>`<div class="int-card" onclick="playInterval(${s})"><div class="int-abbr">${a}</div><div class="int-name">${n}</div><div class="int-semi">${s}<span> st</span></div><div class="int-ex">${ex}</div></div>`).join('')}</div>`],
+['th-key',`<div class="scroll-x"><table><thead><tr><th>#</th><th>Key</th><th>Accidentals</th><th>Scale Notes</th><th>Rel Minor</th></tr></thead><tbody>
+<tr><td>0</td><td class="cn">C Major</td><td>—</td><td class="fm">C D E F G A B</td><td>A minor</td></tr>
+<tr><td>1♯</td><td class="cn">G Major</td><td><span class="sb">F♯</span></td><td class="fm">G A B C D E F♯</td><td>E minor</td></tr>
+<tr><td>2♯</td><td class="cn">D Major</td><td><span class="sb">F♯ C♯</span></td><td class="fm">D E F♯ G A B C♯</td><td>B minor</td></tr>
+<tr><td>3♯</td><td class="cn">A Major</td><td><span class="sb">3♯</span></td><td class="fm">A B C♯ D E F♯ G♯</td><td>F♯ minor</td></tr>
+<tr><td>4♯</td><td class="cn">E Major</td><td><span class="sb">4♯</span></td><td class="fm">E F♯ G♯ A B C♯ D♯</td><td>C♯ minor</td></tr>
+<tr><td>5♯</td><td class="cn">B Major</td><td><span class="sb">5♯</span></td><td class="fm">B C♯ D♯ E F♯ G♯ A♯</td><td>G♯ minor</td></tr>
+<tr><td>1♭</td><td class="cn">F Major</td><td><span class="sb">B♭</span></td><td class="fm">F G A B♭ C D E</td><td>D minor</td></tr>
+<tr><td>2♭</td><td class="cn">B♭ Major</td><td><span class="sb">B♭ E♭</span></td><td class="fm">B♭ C D E♭ F G A</td><td>G minor</td></tr>
+<tr><td>3♭</td><td class="cn">E♭ Major</td><td><span class="sb">3♭</span></td><td class="fm">E♭ F G A♭ B♭ C D</td><td>C minor</td></tr>
+<tr><td>4♭</td><td class="cn">A♭ Major</td><td><span class="sb">4♭</span></td><td class="fm">A♭ B♭ C D♭ E♭ F G</td><td>F minor</td></tr>
+<tr><td>5♭</td><td class="cn">D♭ Major</td><td><span class="sb">5♭</span></td><td class="fm">D♭ E♭ F G♭ A♭ B♭ C</td><td>B♭ minor</td></tr>
+<tr><td>6♭</td><td class="cn">G♭ Major</td><td><span class="sb">6♭</span></td><td class="fm">G♭ A♭ B♭ C♭ D♭ E♭ F</td><td>E♭ minor</td></tr>
+</tbody></table></div><p style="margin-top:.75rem;font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--text3)">Order of sharps: F♯ C♯ G♯ D♯ A♯ E♯ B♯ · Order of flats: B♭ E♭ A♭ D♭ G♭ C♭ F♭</p>`],
+['th-pent',`<p style="color:var(--text2);font-size:.78rem;margin-bottom:1rem;line-height:1.7">Major pentatonic removes the 4th and 7th from the major scale — eliminating all half steps. Formula: 1–2–3–5–6.</p>
+<div class="scroll-x"><table><thead><tr><th>Key</th><th>1</th><th>2</th><th>3</th><th>5</th><th>6</th><th>Pattern</th></tr></thead><tbody>
+${[['C','C','D','E','G','A'],['G','G','A','B','D','E'],['D','D','E','F♯','A','B'],['A','A','B','C♯','E','F♯'],['E','E','F♯','G♯','B','C♯'],['F','F','G','A','C','D'],['B♭','B♭','C','D','F','G']].map(([k,...n])=>`<tr><td class="cn">${k}</td>${n.map(x=>`<td class="fm">${x}</td>`).join('')}<td class="fm">W–W–m3–W–m3</td></tr>`).join('')}
+</tbody></table></div>
+<div class="scale-viz" style="margin-top:1rem">${[['C','1','nC'],['→W→','',''],['D','2','nD'],['→W→','',''],['E','3','nE'],['→m3→','',''],['G','5','nG'],['→W→','',''],['A','6','nA'],['→m3→','',''],['C','8','nC']].map(([n,d,c])=>d?`<div class="sv-step"><div class="sv-dot" style="background:var(--${c})">${n}</div><div class="sv-deg">${d}</div></div>`:`<div class="sv-arr">${n}</div>`).join('')}</div>`],
+['th-blu',`<p style="color:var(--text2);font-size:.78rem;margin-bottom:1rem;line-height:1.7">Blues scale adds the ♭5 (tritone/"blue note" ★) to the minor pentatonic. Formula: 1–♭3–4–♭5–5–♭7.</p>
+<div class="scroll-x"><table><thead><tr><th>Key</th><th>1</th><th>♭3</th><th>4</th><th>♭5 ★</th><th>5</th><th>♭7</th></tr></thead><tbody>
+${[['A','A','C','D','E♭','E','G'],['E','E','G','A','B♭','B','D'],['G','G','B♭','C','D♭','D','F'],['D','D','F','G','A♭','A','C'],['C','C','E♭','F','G♭','G','B♭'],['B','B','D','E','F','F♯','A']].map(([k,n1,n2,n3,blue,n5,n6])=>`<tr><td class="cn">${k}</td><td class="fm">${n1}</td><td class="fm">${n2}</td><td class="fm">${n3}</td><td class="fm" style="color:#e07070">${blue}</td><td class="fm">${n5}</td><td class="fm">${n6}</td></tr>`).join('')}
+</tbody></table></div>
+<div class="scale-viz" style="margin-top:1rem">${[['A','1','nA'],['m3','',''],['C','♭3','nC'],['W','',''],['D','4','nD'],['H','',''],['E♭','★','nDs'],['H','',''],['E','5','nE'],['m3','',''],['G','♭7','nG'],['W','',''],['A','8','nA']].map(([n,d,c])=>d?`<div class="sv-step"><div class="sv-dot" style="background:${c==='nDs'?'#e07070':'var(--'+c+')'};${c==='nDs'?'color:#fff':''}">${n}</div><div class="sv-deg">${d}</div></div>`:`<div class="sv-arr">${n}</div>`).join('')}</div>`],
+['th-sheet',`<div class="staff-wrap"><p style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.85rem">Treble Clef — Lines: E G B D F · Spaces: F A C E</p>
+<svg viewBox="0 0 740 165" width="100%" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">${[40,60,80,100,120].map(y=>`<line x1="60" y1="${y}" x2="720" y2="${y}" stroke="#363648" stroke-width="1.5"/>`).join('')}<text x="65" y="120" font-size="80" font-family="serif" fill="#c8a96e" opacity=".65">𝄞</text>${[['C4',142,140,true,'nC'],['D4',192,130,false,'nD'],['E4',242,120,false,'nE'],['F4',292,110,false,'nF'],['G4',342,100,false,'nG'],['A4',392,90,false,'nA'],['B4',442,80,false,'nB'],['C5',492,70,false,'nC'],['D5',542,60,false,'nD'],['E5',592,50,false,'nE'],['F5',642,40,false,'nF']].map(([label,x,y,led,c])=>`${led?`<line x1="${x-13}" y1="${y}" x2="${x+13}" y2="${y}" stroke="#9994a0" stroke-width="1.5"/>`:''}
+<ellipse cx="${x}" cy="${y}" rx="10" ry="7" fill="var(--${c})"/><text x="${x}" y="${y+23}" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="var(--${c})">${label}</text>`).join('')}<text x="400" y="162" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#5c5870">Lines: E G B D F · Spaces: F A C E</text></svg></div>
+<div class="not-grid">${[['♯','Sharp','Raises note by 1 semitone.'],['♭','Flat','Lowers note by 1 semitone.'],['♮','Natural','Cancels a sharp or flat.'],['𝄞','Treble Clef','Right hand. G4 line.'],['𝄢','Bass Clef','Left hand. F3 line.'],['𝄐','Fermata','Hold longer than written.'],['𝄻','Whole Rest','Full measure of silence.'],['𝄽','Quarter Rest','One beat of silence.']].map(([sym,name,desc])=>`<div class="not-card"><div class="not-sym">${sym}</div><h4>${name}</h4><p>${desc}</p></div>`).join('')}</div>`],
+['th-time',`<p style="font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--acc);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.65rem">Note Values (4/4 reference)</p>
+<div style="background:var(--s1);border:1px solid var(--border);border-radius:4px;padding:.9rem;margin-bottom:1.4rem">${[['𝅝','Whole Note','4 beats',100],['𝅗𝅥','Half Note','2 beats',50],['♩','Quarter Note','1 beat',25],['♪','Eighth Note','½ beat',12.5],['𝅘𝅥𝅯','Sixteenth','¼ beat',6.25]].map(([s,n,b,p])=>`<div class="nv-row"><div class="nv-sym">${s}</div><div style="flex:1"><div style="display:flex;justify-content:space-between;margin-bottom:.22rem"><span style="font-family:'IBM Plex Mono',monospace;font-size:.74rem">${n}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--acc)">${b}</span></div><div class="nv-bar" style="width:${p}%"></div></div></div>`).join('')}</div>
+<div class="time-grid">${[['4/4','Common Time','4 quarter beats. Most common in pop, rock, jazz.'],['3/4','Waltz','3 beats. Strong–weak–weak. Waltzes, ballads.'],['6/8','Compound Duple','6 eighths = 2 dotted-quarter beats. Lilting, flowing.'],['12/8','Compound Quad','12 eighths = 4 dotted-quarter beats. Blues shuffle.'],['5/4','Quintuple','5 beats (3+2 or 2+3). "Take Five", Mission Impossible.'],['7/8','Septuple','7 eighths. Balkan folk, prog rock.']].map(([ts,name,desc])=>`<div class="time-card"><div class="time-sig">${ts}</div><div class="time-info"><h4>${name}</h4><p>${desc}</p></div></div>`).join('')}</div>`]
+  ];
+  CHARTS.forEach(([id,html],idx)=>{
+    const div=document.createElement('div');
+    div.className='tab-pane'+(idx===0?' active':'');div.id=id;div.innerHTML=html;
+    wrap.appendChild(div);
+  });
+}
+
+function playInterval(semi){synth.allOff();const rm=60;setTimeout(()=>synth.on(midiFreq(rm),.8),30);setTimeout(()=>synth.on(midiFreq(rm+semi),.8),420);}
+
+// ════════════════════════════════════════
+// EAR TRAINING
+// ════════════════════════════════════════
+let earMode='note',earAns=null,earScore=0,earTotal=0,earStreak=0,earMidis=[];
+
+function setEarMode(m){
+  earMode=m;['note','interval','chord'].forEach(x=>document.getElementById('em-'+x).classList.remove('on'));
+  document.getElementById('em-'+m).classList.add('on');
+  document.getElementById('earQ').textContent='Press Play to begin!';
+  document.getElementById('earOpts').innerHTML='';earAns=null;
+}
+
+function newEarQ(){
+  document.getElementById('earOpts').innerHTML='';
+  document.getElementById('earQ').textContent='🎵 What did you hear?';
+  if(earMode==='note'){
+    const midi=48+Math.floor(Math.random()*24),note=NOTES[midi%12];earAns=note;earMidis=[midi];
+    const opts=[note,...NOTES.filter(n=>n!==note).sort(()=>Math.random()-.5).slice(0,5)].sort(()=>Math.random()-.5);
+    synth.allOff();setTimeout(()=>synth.on(midiFreq(midi),.9),50);
+    opts.forEach(o=>mkOpt(o,o));
+  } else if(earMode==='interval'){
+    const ivs=[{n:'Unison',v:0},{n:'Min 2nd',v:1},{n:'Maj 2nd',v:2},{n:'Min 3rd',v:3},{n:'Maj 3rd',v:4},{n:'Perfect 4th',v:5},{n:'Tritone',v:6},{n:'Perfect 5th',v:7},{n:'Min 6th',v:8},{n:'Maj 6th',v:9},{n:'Min 7th',v:10},{n:'Maj 7th',v:11},{n:'Octave',v:12}];
+    const pick=ivs[Math.floor(Math.random()*ivs.length)];earAns=pick.n;
+    const rm=48+Math.floor(Math.random()*12);earMidis=[rm,rm+pick.v];
+    synth.allOff();setTimeout(()=>synth.on(midiFreq(rm),.9),50);setTimeout(()=>synth.on(midiFreq(rm+pick.v),.9),450);
+    const opts=[pick,...ivs.filter(i=>i.n!==pick.n).sort(()=>Math.random()-.5).slice(0,5)].sort(()=>Math.random()-.5);
+    opts.forEach(o=>mkOpt(o.n,o.n));
+  } else {
+    const types=[{n:'Major',v:'maj'},{n:'Minor',v:'min'},{n:'Dom 7th',v:'7'},{n:'Major 7th',v:'maj7'},{n:'Minor 7th',v:'m7'},{n:'Diminished',v:'dim'},{n:'Augmented',v:'aug'}];
+    const pick=types[Math.floor(Math.random()*types.length)];earAns=pick.n;
+    const rm=48+Math.floor(Math.random()*12);const chord=CHORDS[pick.v];
+    earMidis=chord.i.map(i=>rm+i);
+    synth.allOff();setTimeout(()=>earMidis.forEach(m=>synth.on(midiFreq(m),.85)),50);
+    const opts=[pick,...types.filter(t=>t.n!==pick.n).sort(()=>Math.random()-.5).slice(0,5)].sort(()=>Math.random()-.5);
+    opts.forEach(o=>mkOpt(o.n,o.n));
+  }
+}
+
+function mkOpt(label,val){
+  const b=document.createElement('button');b.className='ear-opt';b.textContent=label;
+  b.onclick=()=>checkEar(val,b);document.getElementById('earOpts').appendChild(b);
+}
+
+function replayEar(){
+  if(!earMidis.length)return;synth.allOff();
+  if(earMode==='interval'){setTimeout(()=>synth.on(midiFreq(earMidis[0]),.9),50);setTimeout(()=>synth.on(midiFreq(earMidis[1]),.9),450);}
+  else{setTimeout(()=>earMidis.forEach(m=>synth.on(midiFreq(m),.85)),50);}
+}
+
+function checkEar(ans,btn){
+  if(earAns===null)return;earTotal++;
+  const ok=ans===earAns;
+  if(ok){earScore++;earStreak++;btn.classList.add('correct');}
+  else{earStreak=0;btn.classList.add('wrong');document.querySelectorAll('.ear-opt').forEach(b=>{if(b.textContent===earAns)b.classList.add('correct');});}
+  document.getElementById('earScore').textContent=earScore;document.getElementById('earTotal').textContent=earTotal;
+  document.getElementById('earStreak').textContent=earStreak>1?`🔥 ${earStreak} streak`:'';
+  document.querySelectorAll('.ear-opt').forEach(b=>b.onclick=null);earAns=null;
+  setTimeout(()=>newEarQ(),1600);
+}
+function resetEar(){earScore=0;earTotal=0;earStreak=0;document.getElementById('earScore').textContent=0;document.getElementById('earTotal').textContent=0;document.getElementById('earStreak').textContent='';}
+
+// ════════════════════════════════════════
+// INIT
+// ════════════════════════════════════════
+document.addEventListener('DOMContentLoaded',()=>{
+  buildPiano();buildTheory();renderLessons();updateChord();updateScale();
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)document.querySelectorAll('.nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));});},{threshold:.25,rootMargin:'-54px 0px 0px 0px'});
+  document.querySelectorAll('section[id]').forEach(s=>obs.observe(s));
+});
+</script>
+</body>
+</html>
