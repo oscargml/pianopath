@@ -1,0 +1,32 @@
+# Robots.txt for PianoPath
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+Allow: /*.html
+Allow: /index.html
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow crawling of CSS and JS files (critical for rendering)
+Allow: /*.css
+Allow: /*.js
+
+# Sitemap location
+Sitemap: https://pianopath.vercel.app/sitemap.xml
+
+# Crawl delay (be nice to the server)
+Crawl-delay: 1
+Request-rate: 10/1s
+
+# Google-specific rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing-specific rules
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1

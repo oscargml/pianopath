@@ -15,14 +15,37 @@
 <meta name="google-site-verification" content="YOUR_SEARCH_CONSOLE_CODE" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PianoPath – Learn Piano Free Online | Interactive Piano, Chords & Music Theory</title>
-<meta name="description" content="Free interactive piano you can play in your browser. Learn chords, scales, music theory, ear training and beginner piano lessons. No download, no sign-up.">
+<title>Online Piano with Chords – Free Interactive Piano Lessons & Music Theory | PianoPath</title>
+<meta name="description" content="Play piano online free. Interactive piano with chord explorer, scales, music theory lessons, ear training & theory charts. See chords light up in real-time. No download.">
 <meta name="keywords" content="learn piano online free, interactive piano, piano chords, music theory, ear training, piano lessons, scales, circle of fifths">
 <meta property="og:title" content="PianoPath – Free Interactive Piano & Music Theory">
 <meta property="og:description" content="Play piano online, explore chords & scales, complete theory charts, ear training games. Free forever.">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://pianopath.vercel.app/" />
 
+<meta name="keywords" content="online piano, piano chords, learn piano online free, interactive piano chords, piano scales, music theory, piano lessons, ear training, circle of fifths, piano keyboard">
+<meta name="theme-color" content="#0c0c10">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate" hreflang="en" href="https://pianopath.vercel.app/">
+<!-- OPEN GRAPH (Social Media Sharing) -->
+<meta property="og:description" content="Play piano online, explore chords and scales in real-time, learn music theory. Free interactive piano tool with chord highlighting.">
+<meta property="og:url" content="https://pianopath.vercel.app/">
+<meta property="og:image" content="https://pianopath.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<!-- TWITTER CARD (Social Media) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Online Piano with Chords – Free & Interactive">
+<meta name="twitter:description" content="Play piano online free. See chords light up as you play. Learn scales, music theory & more.">
+<meta name="twitter:image" content="https://pianopath.vercel.app/og-image.png">
+<!-- PRELOAD CRITICAL RESOURCES -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
 <!-- ═══════════════════════════════════════════════════════
      GOOGLE ADSENSE
      Step 1: Replace YOUR_PUB_ID with ca-pub-XXXXXXXXXXXXXXXX
@@ -280,6 +303,47 @@ details p{font-size:.76rem;color:var(--text2);line-height:1.75;margin-top:.65rem
 footer{text-align:center;padding:1.75rem;border-top:1px solid var(--border);font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--text3);letter-spacing:.08em}
 footer a{color:var(--text2)}.footer-links{display:flex;gap:1.25rem;justify-content:center;margin-bottom:.6rem;flex-wrap:wrap}
 </style>
+
+<!-- STRUCTURED DATA (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "PianoPath",
+  "description": "Free interactive piano with chord explorer, scales, and music theory lessons",
+  "url": "https://pianopath.vercel.app/",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Web Browser",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "author": {"@type": "Organization", "name": "PianoPath"},
+  "image": "https://pianopath.vercel.app/og-image.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "PianoPath",
+  "url": "https://pianopath.vercel.app",
+  "logo": "https://pianopath.vercel.app/logo.png",
+  "description": "Free online piano learning tool with interactive chord explorer and music theory charts",
+  "sameAs": ["https://github.com/oscargml/pianopath"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pianopath.vercel.app/"},
+    {"@type": "ListItem", "position": 2, "name": "Piano Player", "item": "https://pianopath.vercel.app/#play"},
+    {"@type": "ListItem", "position": 3, "name": "Chord & Scale Explorer", "item": "https://pianopath.vercel.app/#explore"},
+    {"@type": "ListItem", "position": 4, "name": "Lessons", "item": "https://pianopath.vercel.app/#lessons"},
+    {"@type": "ListItem", "position": 5, "name": "Music Theory", "item": "https://pianopath.vercel.app/#theory"}
+  ]
+}
+</script>
+
 </head>
 <body>
 
@@ -1109,5 +1173,102 @@ document.addEventListener('DOMContentLoaded',()=>{
   document.querySelectorAll('section[id]').forEach(s=>obs.observe(s));
 });
 </script>
+
+<!-- SHAREABLE URLS FUNCTIONALITY FOR SEO -->
+<script>
+class PianopathShareableURLs {
+  constructor() { this.init(); }
+  init() {
+    window.addEventListener('load', () => this.loadFromURL());
+    window.addEventListener('hashchange', () => this.loadFromURL());
+  }
+  loadFromURL() {
+    const hashParts = window.location.hash.split('?');
+    const section = hashParts[0] || '#play';
+    const params = new URLSearchParams(hashParts[1] || '');
+    if (section === '#explore') this.loadChordExplorer(params);
+    else if (section === '#play') this.loadPianoPlayer(params);
+  }
+  loadChordExplorer(params) {
+    setTimeout(() => {
+      const chordParam = params.get('chord');
+      const scaleParam = params.get('scale');
+      const rootParam = params.get('root');
+      const typeParam = params.get('type');
+      if (chordParam) this.setChordFromString(chordParam);
+      if (rootParam) {
+        const rootSelect = document.getElementById('cRoot');
+        if (rootSelect) rootSelect.value = rootParam;
+      }
+      if (typeParam) {
+        const typeSelect = document.getElementById('cType');
+        if (typeSelect) typeSelect.value = typeParam;
+      }
+      if (scaleParam) {
+        const scaleSelect = document.getElementById('sType');
+        if (scaleSelect) scaleSelect.value = scaleParam;
+      }
+      if (typeof updateChord === 'function') updateChord();
+      if (typeof updateScale === 'function') updateScale();
+      const exploreSection = document.getElementById('explore');
+      if (exploreSection) exploreSection.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  }
+  setChordFromString(chordStr) {
+    const chordStr_clean = chordStr.trim();
+    let root = chordStr_clean[0].toUpperCase();
+    let remainingStr = chordStr_clean.substring(1);
+    if (remainingStr[0] === '#' || remainingStr[0] === 'b') {
+      root += remainingStr[0];
+      remainingStr = remainingStr.substring(1);
+    }
+    const rootSelect = document.getElementById('cRoot');
+    if (rootSelect) rootSelect.value = root;
+    if (remainingStr) {
+      const typeSelect = document.getElementById('cType');
+      if (typeSelect) typeSelect.value = remainingStr;
+    }
+  }
+  loadPianoPlayer(params) {
+    const note = params.get('note');
+    const chord = params.get('chord');
+    if (note) { if (typeof playNote === 'function') playNote(note); }
+    else if (chord) this.setChordFromString(chord);
+  }
+  generateShareLink() {
+    const rootSelect = document.getElementById('cRoot');
+    const typeSelect = document.getElementById('cType');
+    const scaleSelect = document.getElementById('sType');
+    let url = `${window.location.origin}/#explore?`;
+    const params = [];
+    if (rootSelect && rootSelect.value) {
+      const root = rootSelect.value;
+      const type = typeSelect && typeSelect.value ? typeSelect.value : 'maj';
+      params.push(`chord=${root}${type}`);
+    }
+    if (scaleSelect && scaleSelect.value) params.push(`scale=${scaleSelect.value}`);
+    url += params.join('&');
+    return url;
+  }
+  copyShareLink() {
+    const link = this.generateShareLink();
+    navigator.clipboard.writeText(link);
+  }
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    window.pianoShareable = new PianopathShareableURLs();
+  });
+} else {
+  window.pianoShareable = new PianopathShareableURLs();
+}
+window.copyPianoShareLink = () => {
+  if (window.pianoShareable) window.pianoShareable.copyShareLink();
+};
+window.getPianoShareLink = () => {
+  if (window.pianoShareable) return window.pianoShareable.generateShareLink();
+};
+</script>
+
 </body>
 </html>
