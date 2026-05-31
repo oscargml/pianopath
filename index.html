@@ -12,7 +12,6 @@
 </script>
 <meta charset="UTF-8">
 <meta name="google-site-verification" content="S3TJp5OcNO1_IcflO0zqjELpP8aPwjWNqXOnmLG7QG4" />
-<meta name="google-site-verification" content="YOUR_SEARCH_CONSOLE_CODE" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Online Piano with Chords – Free Interactive Piano Lessons & Music Theory | PianoPath</title>
@@ -47,10 +46,11 @@
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
 <!-- ═══════════════════════════════════════════════════════
-     GOOGLE ADSENSE
-     Step 1: Replace YOUR_PUB_ID with ca-pub-XXXXXXXXXXXXXXXX
-     Step 2: Replace each YOUR_SLOT_ID_n with your 10-digit slot IDs
-     Step 3: Delete the .ad-placeholder line in CSS (marked below)
+     GOOGLE ADSENSE  ·  client ID is wired (ca-pub-8643026289824701)
+     REMAINING STEP: in each ad unit below, replace YOUR_SLOT_ID_n
+     with the 10-digit slot ID from your AdSense dashboard, then
+     delete the matching .ad-placeholder div. Until then, Auto Ads
+     (toggle in AdSense → Ads → By site) will fill automatically.
      ═══════════════════════════════════════════════════════ -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8643026289824701"
      crossorigin="anonymous"></script>
@@ -298,7 +298,72 @@ details p{font-size:.76rem;color:var(--text2);line-height:1.75;margin-top:.65rem
   .nav.open{display:flex;flex-direction:column;position:absolute;top:54px;left:0;right:0;background:var(--s1);border-bottom:1px solid var(--border);padding:.7rem;gap:.3rem;z-index:501}
   .ear-opts{grid-template-columns:repeat(2,1fr)}
 }
-<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="velmorpub" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+/* ═══ HERO ═══ */
+.hero{position:relative;overflow:hidden;padding:3.2rem 1.25rem 2.6rem;border-bottom:1px solid var(--border);background:radial-gradient(1200px 380px at 50% -120px,rgba(200,169,110,.10),transparent 70%),linear-gradient(180deg,#101016,#0c0c10)}
+.hero-wrap{max-width:1100px;margin:0 auto;text-align:center;position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:.45rem;font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);background:rgba(200,169,110,.08);border:1px solid rgba(200,169,110,.22);padding:.3rem .7rem;border-radius:99px;margin-bottom:1.1rem}
+.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+.hero h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.04;letter-spacing:-.02em;color:var(--text);margin-bottom:.85rem}
+.hero h1 em{font-style:italic;color:var(--acc)}
+.hero-sub{font-size:clamp(.85rem,2.2vw,1.05rem);color:var(--text2);max-width:620px;margin:0 auto 1.6rem;line-height:1.6}
+.hero-cta{display:flex;gap:.65rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.9rem}
+.cta{font-family:'IBM Plex Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;padding:.78rem 1.4rem;border-radius:5px;cursor:pointer;border:1px solid var(--border2);transition:all .18s;display:inline-flex;align-items:center;gap:.5rem}
+.cta-primary{background:linear-gradient(180deg,#d8b878,#c8a96e);color:#0c0c10;border-color:var(--acc);font-weight:500;box-shadow:0 8px 24px rgba(200,169,110,.22)}
+.cta-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(200,169,110,.34)}
+.cta-ghost{background:var(--s2);color:var(--text)}
+.cta-ghost:hover{border-color:var(--acc);color:var(--acc)}
+.hero-stats{display:flex;gap:2.4rem;justify-content:center;flex-wrap:wrap}
+.hstat{text-align:center}
+.hstat b{display:block;font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--acc);line-height:1}
+.hstat span{font-family:'IBM Plex Mono',monospace;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text3)}
+
+/* ═══ STREAK PILL ═══ */
+.streak-pill{display:inline-flex;align-items:center;gap:.35rem;font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--acc);background:rgba(200,169,110,.08);border:1px solid rgba(200,169,110,.22);padding:.22rem .55rem;border-radius:99px;white-space:nowrap}
+@media(max-width:700px){.streak-pill{display:none}}
+
+/* ═══ METRONOME ═══ */
+.metro{display:flex;align-items:center;gap:.55rem}
+.metro-bpm{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--acc);min-width:2.4rem;text-align:center;line-height:1}
+.metro-bpm span{font-family:'IBM Plex Mono',monospace;font-size:.5rem;color:var(--text3);display:block}
+.metro-dot{width:10px;height:10px;border-radius:50%;background:var(--border2);transition:none}
+.metro-dot.beat{background:var(--acc);box-shadow:0 0 10px var(--acc)}
+
+/* ═══ SONGS ═══ */
+.songs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.85rem}
+.song-card{background:var(--s1);border:1px solid var(--border);border-radius:6px;padding:1.05rem;transition:all .2s}
+.song-card:hover{border-color:var(--acc);transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.song-card.playing{border-color:var(--acc2);box-shadow:0 0 0 1px var(--acc2),0 8px 24px rgba(126,184,196,.18)}
+.song-emoji{font-size:1.5rem;margin-bottom:.5rem}
+.song-card h4{font-family:'Playfair Display',serif;font-size:1rem;color:var(--text);margin-bottom:.25rem}
+.song-meta{font-family:'IBM Plex Mono',monospace;font-size:.56rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.7rem}
+.song-btns{display:flex;gap:.4rem}
+.song-prog{height:4px;background:var(--s3);border-radius:3px;margin-top:.7rem;overflow:hidden}
+.song-prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acc2),var(--acc));transition:width .12s linear}
+
+/* ═══ GEAR (AFFILIATE) ═══ */
+.gear-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.85rem}
+.gear-card{background:var(--s1);border:1px solid var(--border);border-radius:6px;padding:1.1rem;display:flex;flex-direction:column;transition:all .2s}
+.gear-card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.gear-tag{align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:.52rem;text-transform:uppercase;letter-spacing:.1em;padding:.12rem .45rem;border-radius:99px;background:rgba(200,169,110,.1);color:var(--acc);border:1px solid rgba(200,169,110,.25);margin-bottom:.7rem}
+.gear-card h4{font-family:'Playfair Display',serif;font-size:1rem;color:var(--text);margin-bottom:.3rem}
+.gear-card p{font-size:.74rem;color:var(--text2);line-height:1.6;flex:1;margin-bottom:.85rem}
+.gear-card .cta{justify-content:center;font-size:.64rem;padding:.6rem 1rem}
+.gear-note{font-family:'IBM Plex Mono',monospace;font-size:.56rem;color:var(--text3);margin-top:1rem;line-height:1.6}
+
+/* ═══ SUPPORT ═══ */
+.support-box{max-width:760px;margin:0 auto;text-align:center;background:linear-gradient(180deg,var(--s1),#101016);border:1px solid var(--border2);border-radius:10px;padding:2rem 1.5rem}
+.support-box h2{color:var(--acc);font-size:1.5rem;margin-bottom:.5rem}
+.support-box p{color:var(--text2);font-size:.85rem;line-height:1.65;max-width:520px;margin:0 auto 1.4rem}
+.support-cta{display:flex;gap:.65rem;justify-content:center;flex-wrap:wrap}
+.bmc-btn{display:inline-flex;align-items:center;gap:.5rem;background:#FFDD00;color:#0c0c10;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:.72rem;padding:.72rem 1.3rem;border-radius:6px;border:1px solid #000;transition:transform .18s}
+.bmc-btn:hover{transform:translateY(-2px)}
+.bmc-float{position:fixed;right:16px;bottom:16px;z-index:600;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+@media(max-width:600px){.bmc-float{right:10px;bottom:10px;font-size:.66rem;padding:.6rem 1rem}}
+
+/* ═══ TOAST ═══ */
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--acc);color:#0c0c10;font-family:'IBM Plex Mono',monospace;font-size:.7rem;padding:.6rem 1.1rem;border-radius:6px;opacity:0;pointer-events:none;transition:all .25s;z-index:1000;font-weight:500}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
 /* ═══ FOOTER ═══ */
 footer{text-align:center;padding:1.75rem;border-top:1px solid var(--border);font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--text3);letter-spacing:.08em}
 footer a{color:var(--text2)}.footer-links{display:flex;gap:1.25rem;justify-content:center;margin-bottom:.6rem;flex-wrap:wrap}
@@ -355,19 +420,42 @@ footer a{color:var(--text2)}.footer-links{display:flex;gap:1.25rem;justify-conte
   </div>
   <nav class="nav" id="mainNav">
     <a href="#play" class="active">Play</a>
+    <a href="#songs">Songs</a>
     <a href="#explore">Chords & Scales</a>
     <a href="#lessons">Lessons</a>
     <a href="#theory">Theory</a>
     <a href="#ear">Ear Training</a>
-    <a href="#guides">Guides</a>
+    <a href="#gear">Gear</a>
   </nav>
-  <button class="nav-mob" onclick="document.getElementById('mainNav').classList.toggle('open')">☰</button>
+  <div style="display:flex;align-items:center;gap:.6rem">
+    <span class="streak-pill" id="streakPill" title="Practice streak">🔥 <b id="streakNum">0</b> day</span>
+    <button class="nav-mob" onclick="document.getElementById('mainNav').classList.toggle('open')">☰</button>
+  </div>
 </header>
+
+<!-- ████ HERO ████ -->
+<section class="hero">
+  <div class="hero-wrap">
+    <div class="hero-badge"><span class="dot"></span> 100% Free · No sign-up · Works in your browser</div>
+    <h1>Learn piano the <em>fun</em> way —<br>play, don't just practice.</h1>
+    <p class="hero-sub">A real-sounding online piano with light-up chords &amp; scales, play-along songs, ear-training games, and 16 step-by-step lessons. Start making music in the next 30 seconds.</p>
+    <div class="hero-cta">
+      <a href="#songs" class="cta cta-primary">▶ Play a song now</a>
+      <a href="#play" class="cta cta-ghost">🎹 Free-play the piano</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><b>16</b><span>Lessons</span></div>
+      <div class="hstat"><b>10</b><span>Theory charts</span></div>
+      <div class="hstat"><b>15</b><span>Scales</span></div>
+      <div class="hstat"><b>∞</b><span>Free forever</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- TOP AD -->
 <div style="max-width:1360px;margin:0 auto;padding:0 1.25rem">
   <div class="ad-slot ad-leader">
-    <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_PUB_ID" data-ad-slot="YOUR_SLOT_ID_1" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8643026289824701" data-ad-slot="YOUR_SLOT_ID_1" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     <div class="ad-placeholder">Advertisement</div>
   </div>
@@ -396,6 +484,15 @@ footer a{color:var(--text2)}.footer-links{display:flex;gap:1.25rem;justify-conte
     <div class="ctrl">
       <div class="ctrl-lbl">Sustain</div>
       <button class="btn" id="sustBtn" onclick="toggleSustain()">Off</button>
+    </div>
+    <div class="ctrl">
+      <div class="ctrl-lbl">Metronome</div>
+      <div class="metro">
+        <button class="btn sm" onclick="metro.change(-5)">−</button>
+        <div class="metro-bpm"><span id="metroDot" class="metro-dot" style="margin:0 auto .15rem"></span><b id="metroBpm">90</b><span>BPM</span></div>
+        <button class="btn sm" onclick="metro.change(5)">+</button>
+        <button class="btn sm" id="metroBtn" onclick="metro.toggle()">▶</button>
+      </div>
     </div>
     <div class="ctrl">
       <div class="ctrl-lbl">Labels</div>
@@ -431,6 +528,16 @@ footer a{color:var(--text2)}.footer-links{display:flex;gap:1.25rem;justify-conte
     <div class="leg"><div class="leg-dot" style="background:#6aacbc"></div>Scale note</div>
     <div class="leg"><div class="leg-dot" style="background:#9060cc"></div>Chord tone</div>
   </div>
+</div>
+</section>
+
+<!-- ████ SONGS / PLAY-ALONG ████ -->
+<section class="section" id="songs">
+<div class="wrap">
+  <div class="sec-label">Play-Along</div>
+  <h2 class="sec-title">Play Your First Song</h2>
+  <div class="sec-sub">Hit <b>Listen</b> to watch the keys light up · Hit <b>Practice</b> and play the glowing key to advance</div>
+  <div class="songs-grid" id="songsGrid"></div>
 </div>
 </section>
 
@@ -474,6 +581,7 @@ footer a{color:var(--text2)}.footer-links{display:flex;gap:1.25rem;justify-conte
         <div class="btn-row" style="margin-top:.7rem">
           <button class="btn" onclick="playChord()">▶ Play</button>
           <button class="btn" onclick="playArp()">↑ Arpeggio</button>
+          <button class="btn sm" onclick="shareChord()">🔗 Share</button>
           <button class="btn sm" onclick="clearHL()">✕ Clear</button>
         </div>
       </div>
@@ -518,7 +626,7 @@ footer a{color:var(--text2)}.footer-links{display:flex;gap:1.25rem;justify-conte
     <!-- SIDEBAR AD -->
     <div class="sidebar-ad-col">
       <div class="ad-slot ad-rect">
-        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="YOUR_PUB_ID" data-ad-slot="YOUR_SLOT_ID_2"></ins>
+        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-8643026289824701" data-ad-slot="YOUR_SLOT_ID_2"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         <div class="ad-placeholder">Advertisement · 300×250</div>
       </div>
@@ -530,7 +638,7 @@ footer a{color:var(--text2)}.footer-links{display:flex;gap:1.25rem;justify-conte
 <!-- MID AD -->
 <div style="max-width:1360px;margin:0 auto;padding:0 1.25rem">
   <div class="ad-slot ad-banner">
-    <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_PUB_ID" data-ad-slot="YOUR_SLOT_ID_3" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8643026289824701" data-ad-slot="YOUR_SLOT_ID_3" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     <div class="ad-placeholder">Advertisement</div>
   </div>
@@ -578,7 +686,7 @@ footer a{color:var(--text2)}.footer-links{display:flex;gap:1.25rem;justify-conte
 <!-- MID AD 2 -->
 <div style="max-width:1360px;margin:0 auto;padding:0 1.25rem">
   <div class="ad-slot ad-banner">
-    <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_PUB_ID" data-ad-slot="YOUR_SLOT_ID_4" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8643026289824701" data-ad-slot="YOUR_SLOT_ID_4" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     <div class="ad-placeholder">Advertisement</div>
   </div>
@@ -669,20 +777,49 @@ footer a{color:var(--text2)}.footer-links{display:flex;gap:1.25rem;justify-conte
 </div>
 </section>
 
+<!-- ████ GEAR (AFFILIATE) ████ -->
+<section class="section" id="gear">
+<div class="wrap">
+  <div class="sec-label">Recommended Gear</div>
+  <h2 class="sec-title">Ready for a Real Keyboard?</h2>
+  <div class="sec-sub">Hand-picked starter instruments · As an Amazon Associate we earn from qualifying purchases</div>
+  <div class="gear-grid" id="gearGrid"></div>
+  <p class="gear-note">These are the keyboards we'd recommend to a friend starting out. Buying through these links costs you nothing extra and helps keep PianoPath 100% free. Prices and availability are set by Amazon.</p>
+</div>
+</section>
+
+<!-- ████ SUPPORT ████ -->
+<section class="section" id="support" style="background:var(--s1)">
+<div class="wrap">
+  <div class="support-box">
+    <h2>Enjoying PianoPath?</h2>
+    <p>It's free, has no ads-wall, and never asks you to sign up. If it helped you learn something today, you can keep the music playing with a one-time tip — it genuinely makes a difference.</p>
+    <div class="support-cta">
+      <a class="bmc-btn" href="https://www.buymeacoffee.com/velmorpub" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+      <button class="cta cta-ghost" onclick="shareSite()">🔗 Share PianoPath</button>
+    </div>
+  </div>
+</div>
+</section>
+
 <!-- BOTTOM AD -->
 <div style="max-width:1360px;margin:0 auto;padding:0 1.25rem">
   <div class="ad-slot ad-banner">
-    <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_PUB_ID" data-ad-slot="YOUR_SLOT_ID_5" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8643026289824701" data-ad-slot="YOUR_SLOT_ID_5" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     <div class="ad-placeholder">Advertisement</div>
   </div>
 </div>
 
+<!-- Floating support button + toast -->
+<a class="bmc-btn bmc-float" href="https://www.buymeacoffee.com/velmorpub" target="_blank" rel="noopener">☕ Support</a>
+<div class="toast" id="toast"></div>
+
 <footer>
   <div class="footer-links">
-    <a href="#play">Play Piano</a><a href="#explore">Chords & Scales</a>
+    <a href="#play">Play Piano</a><a href="#songs">Songs</a><a href="#explore">Chords & Scales</a>
     <a href="#lessons">Lessons</a><a href="#theory">Theory Charts</a>
-    <a href="#ear">Ear Training</a><a href="#guides">Guides & FAQ</a>
+    <a href="#ear">Ear Training</a><a href="#gear">Gear</a><a href="#guides">Guides & FAQ</a>
   </div>
   <div>PianoPath · Free Interactive Piano Learning · No Download · No Sign-up</div>
   <div style="margin-top:.35rem;font-size:.52rem;color:var(--text3)">© 2025 PianoPath · Built with Web Audio API</div>
@@ -806,6 +943,8 @@ function pressK(div,freq){
   div.classList.add('active');synth.on(parseFloat(freq));
   document.getElementById('curNote').textContent=div.dataset.note+div.dataset.oct;
   document.getElementById('curFreq').textContent=parseFloat(freq).toFixed(2)+' Hz';
+  if(window.trackPractice)trackPractice();
+  if(window.song&&song.practicing)song.onUserPress(div);
 }
 function releaseK(div,freq){div.classList.remove('active');synth.off(parseFloat(freq));}
 
@@ -1174,6 +1313,79 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 </script>
 
+<!-- ════ FUN + MONETIZATION: metronome · songs · streak · gear · share ════ -->
+<script>
+// ─── TOAST + SHARE ───
+function toast(msg){const t=document.getElementById('toast');if(!t)return;t.textContent=msg;t.classList.add('show');clearTimeout(window._tt);window._tt=setTimeout(()=>t.classList.remove('show'),1900);}
+function shareChord(){const url=window.getPianoShareLink?window.getPianoShareLink():location.href;navigator.clipboard.writeText(url).then(()=>toast('🔗 Chord link copied!')).catch(()=>toast(url));}
+function shareSite(){const u='https://pianopath.vercel.app/';if(navigator.share){navigator.share({title:'PianoPath — Free Interactive Piano',text:'Learn piano free: light-up chords, play-along songs & theory.',url:u}).catch(()=>{});}else{navigator.clipboard.writeText(u).then(()=>toast('🔗 Link copied — thanks for sharing!')).catch(()=>toast(u));}}
+
+// ─── PRACTICE STREAK (localStorage) ───
+function trackPractice(){
+  const today=new Date().toISOString().slice(0,10);
+  let s=JSON.parse(localStorage.getItem('pp_streak')||'{"last":"","count":0,"best":0}');
+  if(s.last===today)return s.count;
+  const y=new Date(Date.now()-864e5).toISOString().slice(0,10);
+  s.count=(s.last===y)?(s.count+1):1;s.last=today;s.best=Math.max(s.best||0,s.count);
+  localStorage.setItem('pp_streak',JSON.stringify(s));renderStreak();
+  if(s.count>1)toast('🔥 '+s.count+'-day streak! Keep it going.');
+  return s.count;
+}
+function renderStreak(){const s=JSON.parse(localStorage.getItem('pp_streak')||'{"count":0}');document.getElementById('streakNum').textContent=s.count||0;}
+
+// ─── METRONOME (Web Audio) ───
+const metro={bpm:90,on:false,timer:null,beat:0,
+  change(d){this.bpm=Math.max(40,Math.min(240,this.bpm+d));document.getElementById('metroBpm').textContent=this.bpm;if(this.on){this.stop();this.start();}},
+  toggle(){this.on?this.stop():this.start();},
+  start(){this.on=true;document.getElementById('metroBtn').textContent='■';this.beat=0;const tick=()=>{this.click(this.beat%4===0);this.beat++;};tick();this.timer=setInterval(tick,60000/this.bpm);},
+  stop(){this.on=false;document.getElementById('metroBtn').textContent='▶';clearInterval(this.timer);document.getElementById('metroDot').classList.remove('beat');},
+  click(accent){const ctx=synth.ctx_(),now=ctx.currentTime;const o=ctx.createOscillator(),g=ctx.createGain();o.frequency.value=accent?1600:1100;g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(.22,now+.001);g.gain.exponentialRampToValueAtTime(.0001,now+.05);o.connect(g);g.connect(ctx.destination);o.start(now);o.stop(now+.06);const d=document.getElementById('metroDot');d.classList.add('beat');setTimeout(()=>d.classList.remove('beat'),95);}
+};
+
+// ─── SONGS / PLAY-ALONG ───
+// seq format: space-separated "NoteOctave" tokens; ":n" sets beat length (default 1).
+const SONGS=[
+  {id:'twinkle',emoji:'⭐',name:'Twinkle, Twinkle',meta:'Beginner · C major · public domain',baseOct:4,tempo:430,
+   seq:'C4 C4 G4 G4 A4 A4 G4:2 F4 F4 E4 E4 D4 D4 C4:2 G4 G4 F4 F4 E4 E4 D4:2 G4 G4 F4 F4 E4 E4 D4:2 C4 C4 G4 G4 A4 A4 G4:2 F4 F4 E4 E4 D4 D4 C4:2'},
+  {id:'ode',emoji:'🎼',name:'Ode to Joy',meta:'Beginner · Beethoven · public domain',baseOct:4,tempo:420,
+   seq:'E4 E4 F4 G4 G4 F4 E4 D4 C4 C4 D4 E4 E4:1.5 D4:0.5 D4:2 E4 E4 F4 G4 G4 F4 E4 D4 C4 C4 D4 E4 D4:1.5 C4:0.5 C4:2'},
+  {id:'jingle',emoji:'🔔',name:'Jingle Bells',meta:'Beginner · C major · public domain',baseOct:4,tempo:360,
+   seq:'E4 E4 E4:2 E4 E4 E4:2 E4 G4 C4 D4 E4:4 F4 F4 F4 F4 F4 E4 E4 E4 E4 D4 D4 E4 D4:2 G4:2'},
+  {id:'elise',emoji:'🌙',name:'Für Elise (theme)',meta:'Intermediate · Beethoven · public domain',baseOct:4,tempo:300,
+   seq:'E5 D#5 E5 D#5 E5 B4 D5 C5 A4:2 C4 E4 A4 B4:2 E4 G#4 B4 C5:2'}
+];
+const song={cur:null,practicing:false,idx:0,timer:null,notes:[],
+  parse(s){return s.trim().split(/\s+/).map(t=>{const[a,b]=t.split(':');const m=a.match(/^([A-G]#?)(\d)$/);return{note:m[1],oct:+m[2],midi:noteToMidi(m[1],+m[2]),beats:b?parseFloat(b):1};});},
+  render(){const g=document.getElementById('songsGrid');if(!g)return;g.innerHTML='';SONGS.forEach(s=>{const d=document.createElement('div');d.className='song-card';d.id='song-'+s.id;d.innerHTML=`<div class="song-emoji">${s.emoji}</div><h4>${s.name}</h4><div class="song-meta">${s.meta}</div><div class="song-btns"><button class="btn" onclick="song.listen('${s.id}')">▶ Listen</button><button class="btn" onclick="song.practice('${s.id}')">🎯 Practice</button></div><div class="song-prog"><i id="prog-${s.id}"></i></div>`;g.appendChild(d);});},
+  _select(id){this.stop();this.cur=SONGS.find(s=>s.id===id);this.notes=this.parse(this.cur.seq);baseOct=this.cur.baseOct;document.getElementById('octDisp').textContent=baseOct;buildPiano();clearHL();document.querySelectorAll('.song-card').forEach(c=>c.classList.remove('playing'));document.getElementById('song-'+id).classList.add('playing');},
+  stop(){this.practicing=false;if(this.timer){clearTimeout(this.timer);this.timer=null;}if(typeof clearHL==='function')clearHL();document.querySelectorAll('.wk.active,.bk.active').forEach(k=>k.classList.remove('active'));},
+  _prog(id,p){const el=document.getElementById('prog-'+id);if(el)el.style.width=p+'%';},
+  listen(id){this._select(id);document.getElementById('play').scrollIntoView({behavior:'smooth'});let i=0;const beat=this.cur.tempo,cid=id,self=this;
+    const step=()=>{if(i>0){const p=self.notes[i-1];document.querySelector(`[data-midi="${p.midi}"]`)?.classList.remove('active');}
+      if(i>=self.notes.length){self._prog(cid,100);setTimeout(()=>self._prog(cid,0),700);return;}
+      const n=self.notes[i];document.querySelector(`[data-midi="${n.midi}"]`)?.classList.add('active');synth.on(midiFreq(n.midi),.8);
+      setTimeout(()=>synth.off(midiFreq(n.midi)),beat*n.beats*.9);self._prog(cid,Math.round(i/self.notes.length*100));i++;self.timer=setTimeout(step,beat*n.beats);};
+    step();},
+  practice(id){this._select(id);document.getElementById('play').scrollIntoView({behavior:'smooth'});this.idx=0;this.practicing=true;trackPractice();toast('🎯 Play the glowing key to advance');this._cue();},
+  _cue(){clearHL();if(this.idx>=this.notes.length){this.practicing=false;this._prog(this.cur.id,100);toast('🎉 Song complete — nicely done!');setTimeout(()=>this._prog(this.cur.id,0),1000);return;}const n=this.notes[this.idx];hlMidi(n.midi,'hl-root','▶');this._prog(this.cur.id,Math.round(this.idx/this.notes.length*100));},
+  onUserPress(div){if(!this.practicing)return;const n=this.notes[this.idx];if(div.dataset.note===n.note&&+div.dataset.oct===n.oct){this.idx++;this._cue();}}
+};
+
+// ─── RECOMMENDED GEAR (Amazon affiliate) ───
+const AMAZON_TAG='globalmx-20'; // Amazon Associates tracking ID
+const GEAR=[
+  {tag:'Best overall',name:'Yamaha P-145',desc:'88 fully-weighted keys with authentic hammer action — the gold-standard first digital piano.',q:'Yamaha P-145 digital piano'},
+  {tag:'Best value 88-key',name:'Alesis Recital Pro',desc:'88 hammer-action keys at a budget price, with a built-in lesson mode and a headphone jack for silent practice.',q:'Alesis Recital Pro 88 key digital piano'},
+  {tag:'Best feel',name:'Roland FP-10',desc:'The PHA-4 keybed feels remarkably close to an acoustic. Compact, great sound, Bluetooth-ready.',q:'Roland FP-10 digital piano'},
+  {tag:'Best budget 61-key',name:'Casio CT-S1',desc:'Portable 61-key with surprisingly rich sound. Perfect if you want to start today without a big commitment.',q:'Casio CT-S1 keyboard'}
+];
+function renderGear(){const g=document.getElementById('gearGrid');if(!g)return;g.innerHTML='';GEAR.forEach(p=>{const url=`https://www.amazon.com/s?k=${encodeURIComponent(p.q)}&tag=${AMAZON_TAG}`;const d=document.createElement('div');d.className='gear-card';d.innerHTML=`<span class="gear-tag">${p.tag}</span><h4>${p.name}</h4><p>${p.desc}</p><a class="cta cta-primary" href="${url}" target="_blank" rel="noopener sponsored nofollow">View on Amazon →</a>`;g.appendChild(d);});}
+
+// ─── INIT ───
+function initExtras(){song.render();renderGear();renderStreak();document.getElementById('metroBpm').textContent=metro.bpm;}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initExtras);else initExtras();
+</script>
+
 <!-- SHAREABLE URLS FUNCTIONALITY FOR SEO -->
 <script>
 class PianopathShareableURLs {
@@ -1201,7 +1413,7 @@ class PianopathShareableURLs {
         if (rootSelect) rootSelect.value = rootParam;
       }
       if (typeParam) {
-        const typeSelect = document.getElementById('cType');
+        const typeSelect = document.getElementById('cQual');
         if (typeSelect) typeSelect.value = typeParam;
       }
       if (scaleParam) {
@@ -1225,7 +1437,7 @@ class PianopathShareableURLs {
     const rootSelect = document.getElementById('cRoot');
     if (rootSelect) rootSelect.value = root;
     if (remainingStr) {
-      const typeSelect = document.getElementById('cType');
+      const typeSelect = document.getElementById('cQual');
       if (typeSelect) typeSelect.value = remainingStr;
     }
   }
@@ -1237,7 +1449,7 @@ class PianopathShareableURLs {
   }
   generateShareLink() {
     const rootSelect = document.getElementById('cRoot');
-    const typeSelect = document.getElementById('cType');
+    const typeSelect = document.getElementById('cQual');
     const scaleSelect = document.getElementById('sType');
     let url = `${window.location.origin}/#explore?`;
     const params = [];
