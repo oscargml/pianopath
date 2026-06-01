@@ -2,130 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- Main Pages -->
+  <!-- PianoPath is a single-page app. Google collapses #fragment URLs to
+       the canonical root, so the sitemap lists only the canonical URL. -->
   <url>
     <loc>https://pianopath.vercel.app/</loc>
-    <lastmod>2026-05-23</lastmod>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-
-  <!-- Piano Explorer / Play Section -->
-  <url>
-    <loc>https://pianopath.vercel.app/#play</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-
-  <!-- Chords & Scales Explorer -->
-  <url>
-    <loc>https://pianopath.vercel.app/#explore</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Lessons Section -->
-  <url>
-    <loc>https://pianopath.vercel.app/#lessons</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Theory Section -->
-  <url>
-    <loc>https://pianopath.vercel.app/#theory</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Chord Variations (pre-selected chords) -->
-  <url>
-    <loc>https://pianopath.vercel.app/#explore?chord=C</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://pianopath.vercel.app/#explore?chord=Cm</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://pianopath.vercel.app/#explore?chord=Cmaj7</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://pianopath.vercel.app/#explore?chord=Cm7</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://pianopath.vercel.app/#explore?chord=Gm</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://pianopath.vercel.app/#explore?chord=Gm7</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://pianopath.vercel.app/#explore?chord=F</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://pianopath.vercel.app/#explore?chord=Fm</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- Scale Variations -->
-  <url>
-    <loc>https://pianopath.vercel.app/#explore?scale=major</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://pianopath.vercel.app/#explore?scale=minor</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://pianopath.vercel.app/#explore?scale=pentatonic</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://pianopath.vercel.app/#explore?scale=blues</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://pianopath.vercel.app/og-image.png</image:loc>
+      <image:title>PianoPath – Free Interactive Piano &amp; Music Theory</image:title>
+    </image:image>
   </url>
 
 </urlset>
