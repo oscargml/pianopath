@@ -439,6 +439,7 @@ footer a{color:var(--text2)}.footer-links{display:flex;gap:1.25rem;justify-conte
     <a href="#songs">Songs</a>
     <a href="#explore">Chords & Scales</a>
     <a href="#lessons">Lessons</a>
+    <a href="#technique">Technique</a>
     <a href="#theory">Theory</a>
     <a href="#ear">Ear Training</a>
     <a href="#gear">Gear</a>
@@ -454,13 +455,13 @@ footer a{color:var(--text2)}.footer-links{display:flex;gap:1.25rem;justify-conte
   <div class="hero-wrap">
     <div class="hero-badge"><span class="dot"></span> 100% Free · No sign-up · Works in your browser</div>
     <h1>Learn piano the <em>fun</em> way —<br>play, don't just practice.</h1>
-    <p class="hero-sub">A real-sounding online piano with light-up chords &amp; scales, play-along songs, ear-training games, and 16 step-by-step lessons. Start making music in the next 30 seconds.</p>
+    <p class="hero-sub">A real-sounding online piano with light-up chords &amp; scales, play-along songs, ear-training games, 28 step-by-step lessons, and classic technique training (Hanon, Czerny &amp; Suzuki method). Start making music in the next 30 seconds.</p>
     <div class="hero-cta">
       <a href="#songs" class="cta cta-primary">▶ Play a song now</a>
       <a href="#play" class="cta cta-ghost">🎹 Free-play the piano</a>
     </div>
     <div class="hero-stats">
-      <div class="hstat"><b>16</b><span>Lessons</span></div>
+      <div class="hstat"><b>28</b><span>Lessons</span></div>
       <div class="hstat"><b>10</b><span>Theory charts</span></div>
       <div class="hstat"><b>15</b><span>Scales</span></div>
       <div class="hstat"><b>∞</b><span>Free forever</span></div>
@@ -674,6 +675,23 @@ footer a{color:var(--text2)}.footer-links{display:flex;gap:1.25rem;justify-conte
   <div class="tab-pane active" id="lt-beg"><div class="lessons-grid" id="grid-beg"></div></div>
   <div class="tab-pane" id="lt-int"><div class="lessons-grid" id="grid-int"></div></div>
   <div class="tab-pane" id="lt-adv"><div class="lessons-grid" id="grid-adv"></div></div>
+</div>
+</section>
+
+<!-- ████ TECHNIQUE & METHODS: HANON · CZERNY · SUZUKI ████ -->
+<section class="section" id="technique">
+<div class="wrap">
+  <div class="sec-label">Technique &amp; Methods</div>
+  <h2 class="sec-title">Hanon · Czerny · Suzuki</h2>
+  <div class="sec-sub">Classic technique exercises and teaching methods — with playable examples</div>
+  <div class="tabs" id="techTabs">
+    <button class="tab active" onclick="switchTab('techTabs','tc-hanon',this)">Hanon Exercises</button>
+    <button class="tab" onclick="switchTab('techTabs','tc-czerny',this)">Czerny Etudes</button>
+    <button class="tab" onclick="switchTab('techTabs','tc-suzuki',this)">Suzuki Method</button>
+  </div>
+  <div class="tab-pane active" id="tc-hanon"><div class="lessons-grid" id="grid-hanon"></div></div>
+  <div class="tab-pane" id="tc-czerny"><div class="lessons-grid" id="grid-czerny"></div></div>
+  <div class="tab-pane" id="tc-suzuki"><div class="lessons-grid" id="grid-suzuki"></div></div>
 </div>
 </section>
 
@@ -1149,6 +1167,56 @@ function renderLessons(){
   });
 }
 
+// ════════════════════════════════════════
+// TECHNIQUE & METHODS — Hanon · Czerny · Suzuki
+// Hanon (1873) and Czerny works are public domain.
+// ════════════════════════════════════════
+const TECHNIQUE={
+hanon:[
+  {id:'t1',title:'What Is Hanon & How to Practice It',desc:'The Virtuoso Pianist in 60 Exercises — the most famous finger-strength book ever written, and how to use it correctly.',tags:['hanon','method'],badge:'mb-beg',
+   content:`<span class="mb-beg">Hanon · Introduction</span><h2>The Virtuoso Pianist (1873)</h2><p>Charles-Louis Hanon published <strong>The Virtuoso Pianist in 60 Exercises</strong> in 1873. It remains the most widely used technique book in the world because it isolates one problem at a time: finger strength, independence, and evenness.</p><h3>The 3 Parts</h3><ul><li><strong>Part 1 (Ex. 1–20):</strong> Preparatory exercises for finger strength, independence and flexibility</li><li><strong>Part 2 (Ex. 21–43):</strong> Scales and arpeggios in all keys, plus advanced finger patterns</li><li><strong>Part 3 (Ex. 44–60):</strong> Virtuoso techniques — repeated notes, trills, octaves, tremolos, wrist technique</li></ul><h3>How to Practice</h3><ul><li><strong>Start slow:</strong> metronome at 60 BPM, one note per click</li><li><strong>Lift each finger</strong> clearly and strike from the knuckle — no key-sliding</li><li><strong>Equal volume</strong> on every note. Your 4th and 5th fingers will want to play quieter — don't let them</li><li><strong>Hands together</strong>, one octave apart, from day one</li><li><strong>Raise tempo gradually:</strong> 60 → 72 → 84 → 96 → 108 BPM over weeks, never sacrificing evenness for speed</li></ul><div class="info"><p>⚠️ Stop immediately if you feel pain or tension in the wrist or forearm. Hanon builds strength only when played relaxed.</p></div>`},
+  {id:'t2',title:'Hanon Exercise No. 1 (Playable)',desc:'The famous first exercise: an 8-note cell climbing step by step. Targets fingers 4 and 5.',tags:['hanon','exercise'],badge:'mb-beg',
+   content:`<span class="mb-beg">Hanon · Exercise 1</span><h2>Hanon Exercise No. 1</h2><p>Each group is 8 notes: <strong>skip a third up, walk up to the top, walk back down</strong>. Then the whole cell starts one step higher.</p><h3>The Ascending Pattern</h3><p class="fm" style="font-family:'IBM Plex Mono',monospace">C–E–F–G–A–G–F–E<br>D–F–G–A–B–A–G–F<br>E–G–A–B–C–B–A–G<br>F–A–B–C–D–C–B–A<br>…and so on, up two octaves. The descent mirrors the pattern coming back down.</p><h3>Fingering</h3><p>Right hand: <strong>1–2–3–4–5–4–3–2</strong> on every group. Left hand: <strong>5–4–3–2–1–2–3–4</strong>. Both hands play the same notes one octave apart.</p><h3>Why It Works</h3><p>The stretch between the 4th and 5th fingers — the weakest pair — gets worked on every single group. Two minutes a day of this transforms your weak fingers within a month.</p><div class="info"><p>🎹 Press <strong>▶ Listen</strong> on the "Hanon Exercise No. 1" card in the Play-Along section above, or use 🎯 Practice mode to play it with light-up keys.</p></div>`},
+  {id:'t3',title:'Finger Independence: Exercises 2–20',desc:'What each preparatory exercise targets, and which ones to prioritize for maximum results.',tags:['hanon','fingers'],badge:'mb-int',
+   content:`<span class="mb-int">Hanon · Part 1</span><h2>Exercises 2–20: The Preparatory Series</h2><p>Each exercise in Part 1 isolates a specific finger combination or motion. You don't need all 20 daily — rotate through them.</p><h3>A Practical Weekly Rotation</h3><ul><li><strong>Ex. 1–3:</strong> General strength and evenness — your daily warm-up core</li><li><strong>Ex. 4–6:</strong> Emphasis on 3rd, 4th and 5th fingers — the weak side of the hand</li><li><strong>Ex. 7–12:</strong> Finger independence with wider stretches and changing directions</li><li><strong>Ex. 13–20:</strong> Preparation for trills and rapid alternation between finger pairs</li></ul><h3>The 10-Minute Routine</h3><p>1. Ex. 1 at 60 BPM (2 min) → 2. Ex. 1 at 84 BPM (2 min) → 3. One rotating exercise slow (3 min) → 4. Same exercise faster (3 min). Done. Consistency beats marathon sessions.</p><div class="info"><p>💡 Hanon recommended playing all 20 preparatory exercises without stopping between them, treating the transitions as part of the workout.</p></div>`},
+  {id:'t4',title:'Scales, Arpeggios & Virtuosity: Ex. 21–60',desc:'The second half of Hanon: all 24 scales, arpeggios, octaves, trills, and tremolos.',tags:['hanon','scales','advanced'],badge:'mb-adv',
+   content:`<span class="mb-adv">Hanon · Parts 2 &amp; 3</span><h2>Exercises 21–60</h2><h3>Part 2 (21–43): Scales &amp; Arpeggios</h3><p>After the preparatory work, Hanon moves to <strong>all major and minor scales</strong> with standard fingering, <strong>chromatic scales</strong>, and <strong>arpeggios in all 24 keys</strong>. This is where finger strength becomes real-world musicianship.</p><h3>Part 3 (44–60): Virtuoso Techniques</h3><ul><li><strong>Repeated notes</strong> with changing fingers (3–2–1 pattern)</li><li><strong>Trills</strong> for all five fingers</li><li><strong>Wrist technique</strong> and detached octaves</li><li><strong>Tremolos</strong> — the final exercise, No. 60</li></ul><h3>Connect It to This Site</h3><p>Use the <strong>Scale Explorer</strong> above to see the exact fingering for any scale Hanon asks for — select the key, watch the keyboard light up, and play along with the ascending/descending playback.</p><div class="info"><p>💡 The complete Hanon book is public domain — free, legal PDF scores are available on IMSLP (imslp.org).</p></div>`},
+],
+czerny:[
+  {id:'t5',title:'Who Was Czerny & Why He Matters',desc:'Beethoven\'s student, Liszt\'s teacher, and author of the most complete piano etude system ever created.',tags:['czerny','method'],badge:'mb-beg',
+   content:`<span class="mb-beg">Czerny · Introduction</span><h2>Carl Czerny (1791–1857)</h2><p>Czerny studied with <strong>Beethoven</strong>, taught <strong>Franz Liszt</strong>, and wrote over 1,000 works — including the etude collections that still form the backbone of classical piano training. Unlike Hanon's pure mechanics, Czerny's studies are <em>real music</em>: each etude drills one technique inside an actual musical piece with melody, dynamics and phrasing.</p><h3>Hanon vs. Czerny</h3><ul><li><strong>Hanon</strong> = gym workout. Pure finger mechanics, no musical interpretation needed</li><li><strong>Czerny</strong> = sparring practice. Technique applied inside real musical situations</li></ul><p>They complement each other: warm up with Hanon, then work on a Czerny etude.</p><h3>What Czerny Teaches That Hanon Doesn't</h3><p>Dynamics and control, phrasing, hand coordination in musical context, sight-reading, velocity with expression. If you only ever play Hanon, you get fast fingers with no music in them.</p>`},
+  {id:'t6',title:'The Czerny Roadmap: Which Opus When',desc:'Op. 599 → 849 → 299 → 740. The progression from first lessons to virtuoso, and where to start.',tags:['czerny','roadmap'],badge:'mb-int',
+   content:`<span class="mb-int">Czerny · Roadmap</span><h2>The Four Essential Books</h2><p>Czerny wrote dozens of collections, but four form the classic progression:</p><ul><li><strong>Op. 599 — Practical Method for Beginners (100 studies):</strong> Starts from absolute zero. Five-finger positions, simple hand coordination. Roughly your first 1–2 years</li><li><strong>Op. 849 — 30 Etudes of Mechanism:</strong> The bridge. Longer studies, more velocity, both hands working harder. Late beginner to early intermediate</li><li><strong>Op. 299 — The School of Velocity (40 studies):</strong> The famous one. Speed, scales, arpeggios and passagework at increasing tempos. Intermediate level, often used alongside sonatinas</li><li><strong>Op. 740 — The Art of Finger Dexterity (50 studies):</strong> Advanced. Concert-level technique preparation</li></ul><h3>Also Worth Knowing</h3><p><strong>Op. 821 — 160 Eight-Measure Exercises:</strong> tiny, focused studies perfect for short practice sessions — each one fits in 8 bars.</p><div class="info"><p>💡 All of Czerny's etudes are public domain. Free scores: IMSLP (imslp.org). Start with Op. 599 if scales feel new; jump to Op. 299 if you already play comfortably.</p></div>`},
+  {id:'t7',title:'Five-Finger Study (Playable)',desc:'A beginner study in the style of Op. 599: five-finger position, stepwise motion, and broken chords.',tags:['czerny','exercise'],badge:'mb-beg',
+   content:`<span class="mb-beg">Czerny · Study</span><h2>Five-Finger Study in C</h2><p>The foundation of Op. 599 is the <strong>five-finger position</strong>: thumb on C, one finger per key up to G. This playable study combines the two core motions of early Czerny — <strong>stepwise runs</strong> and <strong>broken chords</strong> — exactly the vocabulary of his first studies.</p><h3>The Pattern</h3><p class="fm" style="font-family:'IBM Plex Mono',monospace">Run up: C–D–E–F–G, run down: F–E–D<br>Broken chord: C–E–G–E, land on C<br>Repeat starting on D (D–E–F–G–A…)</p><h3>What to Focus On</h3><ul><li><strong>Legato:</strong> connect every note — no gaps, no overlaps</li><li><strong>Even rhythm:</strong> the run and the broken chord must flow at the same pulse</li><li><strong>Quiet hand:</strong> fingers move, the hand and wrist stay level</li></ul><div class="info"><p>🎹 Press <strong>▶ Listen</strong> on the "Czerny-Style Five-Finger Study" card in the Play-Along section, then use 🎯 Practice mode to play it yourself.</p></div>`},
+  {id:'t8',title:'How to Practice an Etude',desc:'The slow-segment-tempo method plus rhythmic variants — how professionals actually learn Czerny.',tags:['czerny','practice'],badge:'mb-int',
+   content:`<span class="mb-int">Czerny · Practice Method</span><h2>How to Practice an Etude</h2><h3>1. Segment First</h3><p>Never read an etude top to bottom on repeat. Split it into 2–4 bar segments. Master segment 1, then segment 2, then join them. Overlap segments by one beat so the joins are seamless.</p><h3>2. The Tempo Ladder</h3><p>Metronome at 50% of target tempo → perfect 3 times in a row → +8 BPM → repeat. If you make 2 mistakes at any tempo, drop back 8 BPM. This feels slow and is dramatically faster than "just playing it again".</p><h3>3. Rhythmic Variants</h3><p>Play even-note passages as <strong>dotted rhythms</strong> (long–short, then short–long). This forces each finger pair to move fast in isolation and irons out unevenness.</p><h3>4. Hands Separate — Still</h3><p>Even at intermediate level, playing the passage hands-separately once before hands-together saves time overall.</p><div class="info"><p>💡 One etude practiced well for 2 weeks beats five etudes read through sloppily. Depth over breadth.</p></div>`},
+],
+suzuki:[
+  {id:'t9',title:'The Suzuki Philosophy: Talent Is Not Inborn',desc:'Shinichi Suzuki\'s "mother-tongue" approach — learning music the way children learn to speak.',tags:['suzuki','philosophy'],badge:'mb-beg',
+   content:`<span class="mb-beg">Suzuki · Philosophy</span><h2>The Mother-Tongue Approach</h2><p>Japanese violinist <strong>Shinichi Suzuki</strong> (1898–1998) noticed something obvious yet revolutionary: every child masters their native language — a task of enormous complexity — without formal study. They do it through <strong>immersion, imitation, repetition, and encouragement</strong>.</p><p>His conclusion: <strong>musical ability is not inborn talent — it's developed</strong>, the same way language is. He called his approach "Talent Education."</p><h3>The Language Parallel</h3><ul><li>Children <strong>listen</strong> for years before speaking → Suzuki students listen to recordings daily before and while learning pieces</li><li>Children <strong>speak</strong> long before they read → Suzuki students play by ear first; note-reading comes later</li><li>Children <strong>repeat</strong> words thousands of times → Suzuki students review old pieces forever, refining them</li><li>Parents <strong>celebrate</strong> every attempt → the learning environment stays positive and pressure-free</li></ul><div class="info"><p>💡 The Suzuki repertoire books and recordings are copyrighted teaching materials — they're studied with a trained Suzuki teacher and purchased through authorized editions. This lesson covers the method's ideas, which you can apply to any learning path.</p></div>`},
+  {id:'t10',title:'The Core Suzuki Principles',desc:'Daily listening, constant review, small steps, tone before speed, and the role of the environment.',tags:['suzuki','principles'],badge:'mb-beg',
+   content:`<span class="mb-beg">Suzuki · Principles</span><h2>The Pillars of the Method</h2><ul><li><strong>Daily listening:</strong> Students listen to recordings of their current and future pieces every single day. The ear learns the destination before the fingers travel there</li><li><strong>Review is sacred:</strong> Old pieces are never "finished." Every lesson revisits earlier repertoire, each time with better tone, phrasing and ease. Mastery grows on familiar material</li><li><strong>Small steps:</strong> Every skill is broken into the tiniest possible unit. One measure, one motion, repeated correctly many times</li><li><strong>Beautiful tone from note one:</strong> Suzuki teachers famously spend weeks on producing one gorgeous note before adding more. "Beautiful tone, beautiful heart"</li><li><strong>The parent as home teacher:</strong> A parent attends lessons and guides daily home practice, especially for young children</li><li><strong>Group learning:</strong> Regular group classes where students play together — motivation through community, not competition</li><li><strong>Delayed reading:</strong> Notation is introduced only after solid playing skills and ear development, like reading after speaking</li></ul>`},
+  {id:'t11',title:'How the Suzuki Piano Progression Works',desc:'The graded repertoire concept: from first variations to Bach and Mozart, one polished piece at a time.',tags:['suzuki','repertoire'],badge:'mb-int',
+   content:`<span class="mb-int">Suzuki · Progression</span><h2>The Graded Repertoire Idea</h2><p>Suzuki Piano is organized into a series of graded volumes. Instead of exercises, students learn a <strong>fixed sequence of real pieces</strong>, each one introducing exactly one or two new skills while reinforcing everything learned before.</p><h3>How the Sequence Teaches</h3><ul><li><strong>The beginning:</strong> Rhythm-pattern variations on a familiar children's melody build the first hand positions, rhythm control and tone — the famous entry point of the method</li><li><strong>Early volumes:</strong> Folk songs and short classical pieces develop coordination, balance between hands, and phrasing</li><li><strong>Middle volumes:</strong> Real classical repertoire — minuets and sonatina movements from the Baroque and Classical eras</li><li><strong>Upper volumes:</strong> Substantial works by composers like Bach and Mozart, at genuine performance level</li></ul><h3>Why a Fixed Sequence?</h3><p>Because every teacher and student worldwide shares the same path, group classes work anywhere, progress is measurable, and each piece is a known quantity with decades of refined teaching points behind it.</p><div class="info"><p>💡 To study the actual repertoire, find a certified Suzuki teacher via the Suzuki Association in your region and use authorized editions with their recordings.</p></div>`},
+  {id:'t12',title:'Applying Suzuki Ideas as a Self-Learner',desc:'You don\'t need to be a child with a Suzuki teacher — these principles supercharge any adult\'s practice.',tags:['suzuki','practice'],badge:'mb-int',
+   content:`<span class="mb-int">Suzuki · For Adults</span><h2>Steal These Ideas for Your Own Practice</h2><h3>1. Listen Before You Learn</h3><p>Before learning any song, listen to it 10–20 times until you can hum every phrase. Your fingers learn dramatically faster when the ear already knows exactly where the music goes. Use the <strong>▶ Listen</strong> button on every song on this site.</p><h3>2. Never Retire a Piece</h3><p>Keep a "review list" of every piece you've learned. Play one old piece daily. Because the notes are automatic, you can focus purely on tone, dynamics and expression — the things that make playing beautiful.</p><h3>3. One Beautiful Note</h3><p>Start each session by playing a single note with the most beautiful sound you can produce. Listen to it decay fully. This calibrates your ears and touch before you play anything else.</p><h3>4. Shrink the Step</h3><p>Stuck on a passage? Your step is too big. One hand, two notes, slow. Then three notes. Success at every micro-step keeps motivation alive — exactly how Suzuki kept four-year-olds progressing.</p><h3>5. Repetition With Attention</h3><p>Suzuki said ability equals "knowledge plus 10,000 times." But each repetition must have a target: <em>this</em> time, smoother; <em>this</em> time, quieter left hand. Mindless reps train mistakes.</p>`},
+]};
+
+function renderTechnique(){
+  const done=JSON.parse(localStorage.getItem('pp_done')||'[]');
+  const grids={hanon:'grid-hanon',czerny:'grid-czerny',suzuki:'grid-suzuki'};
+  const labels={hanon:'Hanon',czerny:'Czerny',suzuki:'Suzuki'};
+  Object.entries(TECHNIQUE).forEach(([m,items])=>{
+    const g=document.getElementById(grids[m]);if(!g)return;g.innerHTML='';
+    items.forEach((l,i)=>{
+      const d=document.createElement('div');d.className='lcard'+(done.includes(l.id)?' done':'');
+      d.innerHTML=`<div class="l-num">${labels[m]} · ${i+1}</div><div class="l-title">${l.title}</div><div class="l-desc">${l.desc}</div><div class="l-tags">${l.tags.map(t=>`<span class="l-tag">${t}</span>`).join('')}</div>`;
+      d.onclick=()=>openLesson(l);g.appendChild(d);
+    });
+  });
+}
+
 function openLesson(l){
   document.getElementById('modalContent').innerHTML=l.content+`<div style="margin-top:1.25rem;display:flex;gap:.65rem"><button class="btn on" onclick="markDone('${l.id}')">✓ Mark Complete</button><button class="btn" onclick="document.getElementById('lessonModal').classList.remove('open')">Close</button></div>`;
   document.getElementById('lessonModal').classList.add('open');
@@ -1158,7 +1226,7 @@ function markDone(id){
   if(!done.includes(id))done.push(id);
   localStorage.setItem('pp_done',JSON.stringify(done));
   document.getElementById('lessonModal').classList.remove('open');
-  renderLessons();
+  renderLessons();renderTechnique();
 }
 
 // ════════════════════════════════════════
@@ -1323,7 +1391,7 @@ function resetEar(){earScore=0;earTotal=0;earStreak=0;document.getElementById('e
 // INIT
 // ════════════════════════════════════════
 document.addEventListener('DOMContentLoaded',()=>{
-  buildPiano();buildTheory();renderLessons();updateChord();updateScale();
+  buildPiano();buildTheory();renderLessons();renderTechnique();updateChord();updateScale();
   const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)document.querySelectorAll('.nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));});},{threshold:.25,rootMargin:'-54px 0px 0px 0px'});
   document.querySelectorAll('section[id]').forEach(s=>obs.observe(s));
 });
@@ -1368,7 +1436,11 @@ const SONGS=[
   {id:'jingle',emoji:'🔔',name:'Jingle Bells',meta:'Beginner · C major · public domain',baseOct:4,tempo:360,
    seq:'E4 E4 E4:2 E4 E4 E4:2 E4 G4 C4 D4 E4:4 F4 F4 F4 F4 F4 E4 E4 E4 E4 D4 D4 E4 D4:2 G4:2'},
   {id:'elise',emoji:'🌙',name:'Für Elise (theme)',meta:'Intermediate · Beethoven · public domain',baseOct:4,tempo:300,
-   seq:'E5 D#5 E5 D#5 E5 B4 D5 C5 A4:2 C4 E4 A4 B4:2 E4 G#4 B4 C5:2'}
+   seq:'E5 D#5 E5 D#5 E5 B4 D5 C5 A4:2 C4 E4 A4 B4:2 E4 G#4 B4 C5:2'},
+  {id:'hanon1',emoji:'🖐️',name:'Hanon Exercise No. 1',meta:'Technique · Hanon (1873) · public domain',baseOct:4,tempo:280,
+   seq:'C4 E4 F4 G4 A4 G4 F4 E4 D4 F4 G4 A4 B4 A4 G4 F4 E4 G4 A4 B4 C5 B4 A4 G4 F4 A4 B4 C5 D5 C5 B4 A4 G4 B4 C5 D5 E5 D5 C5 B4 A4 C5 D5 E5 F5 E5 D5 C5:2'},
+  {id:'czerny5f',emoji:'✋',name:'Czerny-Style Five-Finger Study',meta:'Technique · after Op. 599 · original study',baseOct:4,tempo:320,
+   seq:'C4 D4 E4 F4 G4 F4 E4 D4 C4 E4 G4 E4 C4:2 D4 E4 F4 G4 A4 G4 F4 E4 D4 F4 A4 F4 D4:2 E4 F4 G4 A4 B4 A4 G4 F4 E4 G4 B4 G4 E4:2 C4 E4 G4 C5:2 C4:2'}
 ];
 const song={cur:null,practicing:false,idx:0,timer:null,notes:[],
   parse(s){return s.trim().split(/\s+/).map(t=>{const[a,b]=t.split(':');const m=a.match(/^([A-G]#?)(\d)$/);return{note:m[1],oct:+m[2],midi:noteToMidi(m[1],+m[2]),beats:b?parseFloat(b):1};});},
